@@ -138,7 +138,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "SELECT count(userSessionId) as \"Abandons\" FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not LastFunnelStep",
+        "query": "SELECT count(userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -153,7 +153,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.duration) as \"Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "SELECT count(userSessionId) as \"Abandons\" FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not LastFunnelStep",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -169,7 +169,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.visuallycompletetime) as \"Visually Complete Time\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -278,7 +278,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(revenueproperty) as \"Avg Risk Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+        "query": "select max(useraction.duration) as \"Max Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -294,7 +294,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(revenueproperty) as \"Avg Lost Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not LastFunnelStep",
+        "query": "select max(useraction.visuallycompletetime) as \"Max Visually Complete Time\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
