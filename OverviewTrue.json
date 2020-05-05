@@ -242,7 +242,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.duration) as \"Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select avg(useraction.duration) as \"Avg Action Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -258,7 +258,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.visuallycompletetime) as \"Visually Complete Time\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select avg(useraction.visuallycompletetime) as \"Avg Visually Complete Time\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -274,7 +274,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.speedindex) as \"Speed Index\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select avg(useraction.speedindex) as \"Avg Speed Index\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
