@@ -123,7 +123,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "SELECT count(userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
+        "query": "select avg(usersession.duration) as \"Session Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
