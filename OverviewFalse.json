@@ -200,7 +200,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select sum(revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+        "query": "select avg(useraction.duration) as \"Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -215,7 +215,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select sum(revenueproperty) as \"Lost Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not LastFunnelStep",
+        "query": "select avg(useraction.visuallycompletetime) as \"Visually Complete Time\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
