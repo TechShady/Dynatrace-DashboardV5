@@ -262,7 +262,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(revenueproperty) as \"Avg Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
+        "query": "select avg(userActionCount) as \"Avg Actions per Session\" FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
