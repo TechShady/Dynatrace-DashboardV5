@@ -92,7 +92,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(userSessionId) as \"Sessions\" FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select count(userSessionId) as \"Sessions\" FROM usersession where useraction.application=\"MyApp\" MyFilter and FunnelORClause",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
