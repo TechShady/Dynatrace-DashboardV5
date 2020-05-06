@@ -242,7 +242,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.duration) as \"Avg Action Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select avg(useraction.duration) as \"Avg Action Duration\" from usersession where useraction.application=\"MyApp\" MyFilter and FunnelORClause",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -258,7 +258,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.visuallycompletetime) as \"Avg Visually Complete Time\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select avg(useraction.visuallycompletetime) as \"Avg Visually Complete Time\" from usersession where useraction.application=\"MyApp\" MyFilter and FunnelORClause",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -274,7 +274,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select avg(useraction.speedindex) as \"Avg Speed Index\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select avg(useraction.speedindex) as \"Avg Speed Index\" from usersession where useraction.application=\"MyApp\" MyFilter and FunnelORClause",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -290,7 +290,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"MyApp\" MyFilter and FunnelORClause",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -306,7 +306,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-      "query": "select count(usersessionid) as \"Nonengaged Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and duration > 180000 and userActionCount < 10 and StepFunnel1",
+      "query": "select count(usersessionid) as \"Nonengaged Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and duration > 180000 and userActionCount < 10 and FunnelORClause",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -322,7 +322,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-      "query": "select sum(numberOfRageClicks) as \"Rage Clicks\" FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+      "query": "select sum(numberOfRageClicks) as \"Rage Clicks\" FROM usersession where useraction.application=\"MyApp\" MyFilter and FunnelORClause",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
         "limit": 50
