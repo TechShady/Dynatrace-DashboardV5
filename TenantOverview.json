@@ -233,6 +233,7 @@
                 "resultMetadata": {}
             },
             "filtersPerEntityType": {}
+			}
     }, {
         "name": "",
         "tileType": "CUSTOM_CHARTING",
