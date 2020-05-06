@@ -374,6 +374,21 @@
       }
     },
     {
+      "name": "Application Links \u25BC",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 798,
+        "left": 0,
+        "width": 266,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
       "name": "Custom Links \u25BC",
       "tileType": "HEADER",
       "configured": true,
