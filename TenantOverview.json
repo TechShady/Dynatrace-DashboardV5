@@ -21,61 +21,43 @@
     "tags": ["CEM EXT","Portal"]
  },
  "tiles": [
-  {
-   "name": "User Sessions Query",
-   "tileType": "DTAQL",
-   "configured": true,
-   "bounds": {
-    "top": 304,
-    "left": 0,
-    "width": 532,
-    "height": 380
-   },
-   "tileFilter": {
-    "timeframe": null,
-    "managementZone": null
-   },
-   "customName": "Duration",
-   "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", avg(useraction.duration) as \"Duration\" from useraction",
-   "type": "LINE_CHART"
-  },
-  {
-   "name": "User Sessions Query",
-   "tileType": "DTAQL",
-   "configured": true,
-   "bounds": {
-    "top": 304,
-    "left": 570,
-    "width": 532,
-    "height": 380
-   },
-   "tileFilter": {
-    "timeframe": null,
-    "managementZone": null
-   },
-   "customName": "Visually Complete",
-   "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", AVG(visuallyCompleteTime) as \"Visually Complete\" from useraction",
-   "type": "LINE_CHART"
-  },
-  {
-   "name": "User Sessions Query",
-   "tileType": "DTAQL",
-   "configured": true,
-   "bounds": {
-    "top": 304,
-    "left": 1140,
-    "width": 532,
-    "height": 380
-   },
-   "tileFilter": {
-    "timeframe": null,
-    "managementZone": null
-   },
-   "customName": "Speed Index",
-   "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", AVG(speedIndex) as \"Speed Index\" from useraction",
-   "type": "LINE_CHART"
-  },
-  {
+    {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 0,
+            "width": 836,
+            "height": 380
+        },
+        "tileFilter": {},
+        "customName": "Duration",
+        "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"3m\") as \"Time\", avg(useraction.duration) as \"Duration\", count(*) as \"Sessions\" from usersession",
+        "type": "LINE_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": true
+        },
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 836,
+            "width": 836,
+            "height": 380
+        },
+        "tileFilter": {},
+        "customName": "Errors",
+        "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"3m\") as \"Time\", sum(totalErrorCount) as \"Errors\", count(*) as \"Sessions\" from usersession",
+        "type": "LINE_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": true
+        },
+        "limit": 50
+    }, {
    "name": "User Sessions Query",
    "tileType": "DTAQL",
    "configured": true,
@@ -147,7 +129,7 @@
     "managementZone": null
    },
    "customName": " ",
-   "query": "select PERCENTILE(duration,90) as \"Duration 90th Percentile\" from useraction",
+   "query": "select count(*) as \"Sessions\" from usersession",
    "type": "SINGLE_VALUE",
    "timeFrameShift": "dynamic"
   },
@@ -166,7 +148,7 @@
     "managementZone": null
    },
    "customName": " ",
-   "query": "select PERCENTILE(visuallyCompleteTime,90) as \"Visually Complete 90th Percentile\" from useraction",
+   "query": "select avg(duration) as \"Avg Duration\" from useraction",
    "type": "SINGLE_VALUE",
    "timeFrameShift": "dynamic"
   },
@@ -185,7 +167,7 @@
     "managementZone": null
    },
    "customName": " ",
-   "query": "select PERCENTILE(speedIndex,90) as \"Speed Index 90th Percentile\" from useraction",
+   "query": "select sum(totalerrorcount) as \"Errros\" from usersession",
    "type": "SINGLE_VALUE",
    "timeFrameShift": "dynamic"
   },
