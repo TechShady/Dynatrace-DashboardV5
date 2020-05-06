@@ -460,7 +460,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\ude12",
-			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(useraction.errorCount) as \"Errors\" FROM usersession",
+			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(useraction.errorCount) as \"Errors\" FROM usersession where useraction.application=\"MyApp\" MyFilter and (FunnelORClause)",
 			"type": "LINE_CHART"
 		},
 		{
@@ -493,7 +493,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\ude12",
-			"query": "select distinct name, sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and errorcount>0 order by sum(useraction.errorCount) DESC",
+			"query": "select distinct name, sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and errorcount>0 and (FunnelORClause) order by sum(useraction.errorCount) DESC",
 			"type": "LINE_CHART"
 		},
 		{

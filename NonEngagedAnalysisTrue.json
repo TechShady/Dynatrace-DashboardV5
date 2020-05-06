@@ -86,7 +86,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and duration > 180000 and userActionCount < 10 and CombinedStep",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and duration > 180000 and userActionCount < 10 and LastFunnelStep",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -188,7 +188,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\ude34",
-			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\",count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and duration > 180000 and userActionCount < 10 and userid is not null ",
+			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\",count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and duration > 180000 and userActionCount < 10 and userid is not null and (FunnelORClause)",
 			"type": "LINE_CHART"
 		},
 		{

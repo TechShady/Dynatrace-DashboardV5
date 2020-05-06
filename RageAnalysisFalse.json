@@ -1,4 +1,4 @@
-﻿{
+﻿-{
  "metadata": {
   "configurationVersions": [
    2
@@ -256,7 +256,7 @@
     "managementZone": null
    },
    "customName": "\uD83D\uDE21",
-   "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(numberOfRageClicks) as \"Rages\" FROM usersession where useraction.application=\"MyApp\" MyFilter and numberOfRageClicks>0",
+   "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(numberOfRageClicks) as \"Rages\" FROM usersession where useraction.application=\"MyApp\" MyFilter and numberOfRageClicks>0 and (FunnelORClause)",
    "type": "LINE_CHART"
   },
   {

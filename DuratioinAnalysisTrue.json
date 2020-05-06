@@ -460,7 +460,7 @@
 				"managementZone": null
 			},
 			"customName": "\u23f1",
-			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", avg(useraction.duration) as \"Duration\" FROM usersession",
+			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", avg(useraction.duration) as \"Duration\" FROM usersession where useraction.application=\"MyApp\" MyFilter and (FunnelORClause)",
 			"type": "LINE_CHART"
 		},
 		{
@@ -493,7 +493,7 @@
 				"managementZone": null
 			},
 			"customName": "\u23f1",
-			"query": "select distinct name, avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter order by Duration DESC",
+			"query": "select distinct name, avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and (FunnelORClause) order by Duration DESC",
 			"type": "LINE_CHART"
 		},
 		{
