@@ -315,7 +315,7 @@
             "height": 266
         },
         "tileFilter": {},
-        "customName": "User sessions query results",
+        "customName": "MyFunnel User Journey",
         "query": "SELECT FUNNEL(FunnelStep) FROM usersession where useraction.application=\"MyApp\" MyFilter",
         "type": "FUNNEL",
         "limit": 50
