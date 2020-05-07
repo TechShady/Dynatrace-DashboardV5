@@ -1,22 +1,25 @@
 ﻿{
-    "metadata": {
-        "configurationVersions": [3],
-        "clusterVersion": "1.194.0.20200506-184132"
-    },
-    "id": "9295f856-345e-497c-bbbd-b27a931dc59c",
-    "dashboardMetadata": {
-        "name": "\uD83D\uDED2 MyFunnel User Journey",
-        "shared": true,
-        "owner": "techshadyjk@ruxitlabs.com",
-        "sharingDetails": {
-            "linkShared": true,
-            "published": true
-        },
-        "dashboardFilter": {
-            "timeframe": "l_2_HOURS"
-        },
-        "tags": ["CEM EXT", "MyApp", "User Journey"]
-    },
+ "metadata": {
+ "configurationVersions": [
+  2
+ ],
+ "clusterVersion": "1.179.0.20190919-152218"
+ },
+ "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da313",
+ "dashboardMetadata": {
+ "name": "\ud83d\uded2 MyFunnel User Journey",
+ "shared": true,
+ "owner": "MyEmail",
+ "sharingDetails": {
+  "linkShared": true,
+  "published": true
+ },
+ "dashboardFilter": {
+  "timeframe": "l_2_HOURS",
+  "managementZone": null
+ },
+    "tags": ["CEM EXT","MyApp","User Journey"]
+ },
     "tiles": [{
         "name": "DTAQL",
         "tileType": "DTAQL",
