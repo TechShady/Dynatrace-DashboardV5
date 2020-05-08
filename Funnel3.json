@@ -258,6 +258,7 @@
         "customName": "MyFunnel User Journey",
         "query": "SELECT FUNNEL(FunnelStep) FROM usersession where useraction.application=\"MyApp\" MyFilter",
         "type": "FUNNEL",
+        "timeFrameShift": "dynamic",
         "limit": 50
     }]
 }

@@ -1,666 +1,378 @@
 ﻿{
- "metadata": {
- "configurationVersions": [
-  2
- ],
- "clusterVersion": "1.179.0.20190919-152218"
- },
- "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da313",
- "dashboardMetadata": {
- "name": "\ud83d\uded2 MyFunnel User Journey",
- "shared": true,
- "owner": "MyEmail",
- "sharingDetails": {
-  "linkShared": true,
-  "published": true
- },
- "dashboardFilter": {
-  "timeframe": "l_2_HOURS",
-  "managementZone": null
- },
-    "tags": ["CEM EXT","MyApp","User Journey"]
- },
- "tiles": [
- {
-  "name": "User Sessions Query",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 38,
-  "left": 266,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader1",
-  "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 38,
-  "left": 950,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader4",
-  "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and StepFunnel4",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 38,
-  "left": 1178,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader5",
-  "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and StepFunnel4 and StepFunnel5",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 190,
-  "left": 266,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader1",
-  "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not StepFunnel2",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 190,
-  "left": 950,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader4",
-  "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and StepFunnel4 and not StepFunnel5",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 190,
-  "left": 1178,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader5",
-  "query": "select 0 as \"Abandons\" from usersession limit 1",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "Markdown",
-  "tileType": "MARKDOWN",
-  "configured": true,
-  "bounds": {
-  "top": 0,
-  "left": 266,
-  "width": 228,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "markdown": "## [StepHeader1](#dashboard;id=1fc1af04-a855-43cb-855c-c32f4ecda313)"
- },
- {
-  "name": "Markdown",
-  "tileType": "MARKDOWN",
-  "configured": true,
-  "bounds": {
-  "top": 0,
-  "left": 1178,
-  "width": 228,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "markdown": "## [StepHeader5](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda313)"
- },
- {
-  "name": "Markdown",
-  "tileType": "MARKDOWN",
-  "configured": true,
-  "bounds": {
-  "top": 0,
-  "left": 950,
-  "width": 228,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "markdown": "## [StepHeader4](#dashboard;id=7f64e3ef-239c-416a-b3a4-66b99beda313)"
- },
- {
-  "name": "Sessions",
-  "tileType": "HEADER",
-  "configured": true,
-  "bounds": {
-  "top": 76,
-  "left": 114,
-  "width": 152,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  }
- },
- {
-  "name": "Abandons",
-  "tileType": "HEADER",
-  "configured": true,
-  "bounds": {
-  "top": 228,
-  "left": 114,
-  "width": 152,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  }
- },
- {
-  "name": "Duration",
-  "tileType": "HEADER",
-  "configured": true,
-  "bounds": {
-  "top": 380,
-  "left": 114,
-  "width": 152,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  }
- },
- {
-  "name": "Errors",
-  "tileType": "HEADER",
-  "configured": true,
-  "bounds": {
-  "top": 532,
-  "left": 114,
-  "width": 152,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  }
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 494,
-  "left": 950,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader4",
-  "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel4",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 494,
-  "left": 266,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader1",
-  "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 494,
-  "left": 1178,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader5",
-  "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel5",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 342,
-  "left": 266,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader1",
-  "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 342,
-  "left": 950,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader4",
-  "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel4",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 342,
-  "left": 1178,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader5",
-  "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel5",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-    "top": 0,
-    "left": 1634,
-    "width": 38,
-    "height": 38
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "markdown": "![BackButton]()"
- },
- {
-  "name": "User Sessions Query",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 38,
-  "left": 494,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader2",
-  "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "User Sessions Query",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 38,
-  "left": 722,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader3",
-  "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 190,
-  "left": 494,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader2",
-  "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and not StepFunnel3",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 190,
-  "left": 722,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader3",
-  "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and not StepFunnel4",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 342,
-  "left": 494,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader2",
-  "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel2 ",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 342,
-  "left": 722,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader3",
-  "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel3",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 494,
-  "left": 494,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader2",
-  "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel2",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 494,
-  "left": 722,
-  "width": 228,
-  "height": 152
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader3",
-  "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel3",
-  "type": "SINGLE_VALUE",
-  "timeFrameShift": "dynamic"
- },
- {
-  "name": "Markdown",
-  "tileType": "MARKDOWN",
-  "configured": true,
-  "bounds": {
-  "top": 0,
-  "left": 494,
-  "width": 228,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "markdown": "## [StepHeader2](#dashboard;id=2662ddb8-dd6a-4345-a1bc-7ff069eda313)"
- },
- {
-  "name": "Markdown",
-  "tileType": "MARKDOWN",
-  "configured": true,
-  "bounds": {
-  "top": 0,
-  "left": 722,
-  "width": 228,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "markdown": "## [StepHeader3](#dashboard;id=10a69069-74c2-4eba-b18a-6856d91da313)"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 646,
-  "left": 266,
-  "width": 228,
-  "height": 228
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader1",
-  "query": "select userExperienceScore as \"Experience Score\", count(*) as \"Count\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 GROUP BY userExperienceScore ORDER BY count(*) DESC",
-  "type": "TABLE"
- },
- {
-  "name": "Experience",
-  "tileType": "HEADER",
-  "configured": true,
-  "bounds": {
-  "top": 722,
-  "left": 114,
-  "width": 152,
-  "height": 38
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  }
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 646,
-  "left": 494,
-  "width": 228,
-  "height": 228
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader2",
-  "query": "select userExperienceScore as \"Experience Score\", count(*) as \"Count\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 GROUP BY userExperienceScore ORDER BY count(*) DESC",
-  "type": "TABLE"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 646,
-  "left": 722,
-  "width": 228,
-  "height": 228
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader3",
-  "query": "select userExperienceScore as \"Experience Score\", count(*) as \"Count\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 GROUP BY userExperienceScore ORDER BY count(*) DESC",
-  "type": "TABLE"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 646,
-  "left": 950,
-  "width": 228,
-  "height": 228
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader4",
-  "query": "select userExperienceScore as \"Experience Score\", count(*) as \"Count\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and StepFunnel4 GROUP BY userExperienceScore ORDER BY count(*) DESC",
-  "type": "TABLE"
- },
- {
-  "name": "DTAQL",
-  "tileType": "DTAQL",
-  "configured": true,
-  "bounds": {
-  "top": 646,
-  "left": 1178,
-  "width": 228,
-  "height": 228
-  },
-  "tileFilter": {
-  "timeframe": null,
-  "managementZone": null
-  },
-  "customName": "StepHeader5",
-  "query": "select userExperienceScore as \"Experience Score\", count(*) as \"Count\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and StepFunnel4 and StepFunnel5 GROUP BY userExperienceScore ORDER BY count(*) DESC",
-  "type": "TABLE"
- }
- ]
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.194.0.20200507-182645"
+    },
+    "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da313",
+    "dashboardMetadata": {
+        "name": "\uD83D\uDED2 MyFunnel User Journey",
+        "shared": true,
+        "owner": "MyEmail",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": true
+        },
+        "dashboardFilter": {
+            "timeframe": "l_2_HOURS"
+        },
+        "tags": ["CEM EXT", "MyApp", "User Journey"]
+    },
+    "tiles": [{
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 266,
+            "width": 1140,
+            "height": 266
+        },
+        "tileFilter": {},
+        "customName": "MyFunnel User Journey",
+        "query": "SELECT FUNNEL(FunnelStep) FROM usersession where useraction.application=\"MyApp\" MyFilter",
+        "type": "FUNNEL",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 266,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader1",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not StepFunnel2",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 950,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader4",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and StepFunnel4 and not StepFunnel5",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 1178,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader5",
+        "query": "select 0 as \"Abandons\" from usersession limit 1",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [StepHeader1](#dashboard;id=1fc1af04-a855-43cb-855c-c32f4ecda313)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1178,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [StepHeader5](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda313)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 950,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [StepHeader4](#dashboard;id=7f64e3ef-239c-416a-b3a4-66b99beda313)"
+    }, {
+        "name": "Sessions",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 152,
+            "left": 114,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Abandons",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 114,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Duration",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 494,
+            "left": 114,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Errors",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 114,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 950,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader4",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel4",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 266,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader1",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 1178,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader5",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel5",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 266,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader1",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel1",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 950,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader4",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel4",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 1178,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader5",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel5",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1634,
+            "width": 38,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "![BackButton]()"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 494,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader2",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and not StepFunnel3",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 722,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader3",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and StepFunnel3 and not StepFunnel4",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 494,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader2",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel2 ",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 722,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader3",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel3",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 494,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader2",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel2",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 722,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "StepHeader3",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"MyApp\" MyFilter and StepFunnel3",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 494,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [StepHeader2](#dashboard;id=2662ddb8-dd6a-4345-a1bc-7ff069eda313)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 722,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [StepHeader3](#dashboard;id=10a69069-74c2-4eba-b18a-6856d91da313)"
+    }]
 }
