@@ -287,7 +287,7 @@
     "managementZone": null
    },
    "customName": "\u2620",
-   "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", count(usersessionid) as \"Abandons\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep ",
+   "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", count(usersessionid) as \"Abandons\" FROM usersession where useraction.application=\"MyApp\" MyFilter and not LastFunnelStep ",
    "type": "LINE_CHART"
   },
      {
