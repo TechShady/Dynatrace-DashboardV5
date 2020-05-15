@@ -2,7 +2,7 @@
 
 ## What is Digital Business Analytics?
 
-![Digital Business Analytics](Images/DBA.png)
+![Digital Business Analytics](images/DBA.png)
 ## Sample Dashboard - Tenant Overview
-![Tenant Overview Dashboard](Images/Tenant.png)
+![Tenant Overview Dashboard](images/AppPortal.png)
 
