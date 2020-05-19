@@ -30,7 +30,7 @@
         "tileFilter": {},
         "filterConfig": {
             "type": "MIXED",
-            "customName": "Active sessions",
+            "customName": "Sessions",
             "defaultName": "Custom chart",
             "chartConfig": {
                 "legendShown": true,
@@ -80,7 +80,7 @@
         "tileFilter": {},
         "filterConfig": {
             "type": "MIXED",
-            "customName": "Action duration (load action, by browser)",
+            "customName": "Duration",
             "defaultName": "Custom chart",
             "chartConfig": {
                 "legendShown": true,
