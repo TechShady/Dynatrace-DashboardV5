@@ -242,7 +242,7 @@
                     "dimensions": [{
                         "id": "1",
                         "name": "Apdex category",
-                        "values": [],
+                        "values": ["FRUSTRATED", "SATISFIED", "TOLERATING"],
                         "entityDimension": false
                     }],
                     "sortAscending": false,
