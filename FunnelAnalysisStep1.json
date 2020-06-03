@@ -36,7 +36,7 @@
         "managementZone": null
       },
       "customName": "Location",
-      "query": "select count(usersessionid) as \"Requests\",Region FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and Region!=\"synthetic\" and Region IS NOT NULL group by Region",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and StepFunnel2 and country!=\"synthetic\" and country IS NOT NULL group by country",
       "type": "PIE_CHART"
     },
     {
@@ -54,7 +54,7 @@
         "managementZone": null
       },
       "customName": "Location",
-      "query": "select count(usersessionid) as \"Requests\",Region FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not StepFunnel2 and Region!=\"synthetic\" and Region IS NOT NULL group by Region",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"MyApp\" MyFilter and StepFunnel1 and not StepFunnel2 and country!=\"synthetic\" and country IS NOT NULL group by country",
       "type": "PIE_CHART"
     },
     {
@@ -1141,7 +1141,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,Region,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22MyApp%22%20MyFilter%20and%20StepFunnel1%20and%20StepFunnel2%20and%20region%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22MyApp%22%20MyFilter%20and%20StepFunnel1%20and%20StepFunnel2%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1157,7 +1157,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,Region,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22MyApp%22%20MyFilter%20and%20StepFunnel1%20and%20not%20StepFunnel2%20and%20region%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22MyApp%22%20MyFilter%20and%20StepFunnel1%20and%20not%20StepFunnel2%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
