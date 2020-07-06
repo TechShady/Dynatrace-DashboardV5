@@ -139,7 +139,7 @@
     "timeframe": null,
     "managementZone": null
    },
-   "markdown": "## [Satisfied](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09LastFunnelStep%20MyFilter%20and%20userExperienceScore%3D%22SATISFIED%22%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
+   "markdown": "## [Satisfied](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09StepFunnel1%20MyFilter%20and%20userExperienceScore%3D%22SATISFIED%22%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
   },
   {
    "name": "Markdown",
@@ -155,7 +155,7 @@
     "timeframe": null,
     "managementZone": null
    },
-   "markdown": "## [Tolerated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09LastFunnelStep%20MyFilter%20and%20userExperienceScore%3D%22TOLERATED%22%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
+   "markdown": "## [Tolerated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09StepFunnel1%20MyFilter%20and%20userExperienceScore%3D%22TOLERATED%22%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
   },
   {
    "name": "Markdown",
@@ -171,7 +171,7 @@
     "timeframe": null,
     "managementZone": null
    },
-   "markdown": "## [Frustrated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09LastFunnelStep%20MyFilter%20and%20userExperienceScore%3D%22FRUSTRATED%22%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
+   "markdown": "## [Frustrated](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09StepFunnel1%20MyFilter%20and%20userExperienceScore%3D%22FRUSTRATED%22%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
   },
   {
    "name": "Abandons by User Experience",
@@ -253,7 +253,7 @@
     "timeframe": null,
     "managementZone": null
    },
-   "markdown": "## [Abandons](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09LastFunnelStep%20MyFilter%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
+   "markdown": "## [Abandons](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09StepFunnel1%20MyFilter%20and%20not%20LastFunnelStep%20&visualization=TABLE)"
   },
   {
    "name": "User Sessions Query",
