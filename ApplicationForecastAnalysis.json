@@ -83,7 +83,7 @@
       }
     },
     {
-      "name": "Average Action Duration",
+      "name": "Key Action Avg Duration",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
@@ -98,7 +98,7 @@
       }
     },
     {
-      "name": "Error Count",
+      "name": "Key Action Error Count",
       "tileType": "HEADER",
       "configured": true,
       "bounds": {
