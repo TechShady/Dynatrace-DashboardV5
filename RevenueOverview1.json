@@ -66,7 +66,7 @@
         "managementZone": null
       },
       "customName": "Revenue",
-      "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep",
+      "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -85,7 +85,7 @@
         "managementZone": null
       },
       "customName": "Risk Revenue",
-      "query": "select sum(revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+      "query": "select sum(revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -123,7 +123,7 @@
         "managementZone": null
       },
       "customName": "New User Revenue",
-      "query": "select sum(revenueproperty) as \"New User Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS true",
+      "query": "select sum(revenueproperty) as \"New User Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS true",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -142,7 +142,7 @@
         "managementZone": null
       },
       "customName": "Returning User Revenue",
-      "query": "select sum(revenueproperty) as \"Returning User Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS false",
+      "query": "select sum(revenueproperty) as \"Returning User Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS false",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -180,7 +180,7 @@
         "managementZone": null
       },
       "customName": "Average Risk Order Value",
-      "query": "select avg(revenueproperty) as \"Average Risk Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+      "query": "select avg(revenueproperty) as \"Average Risk Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -218,7 +218,7 @@
         "managementZone": null
       },
       "customName": "Average New User Order Value",
-      "query": "select avg(revenueproperty) as \"Average New User Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS true",
+      "query": "select avg(revenueproperty) as \"Average New User Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS true",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -237,7 +237,7 @@
         "managementZone": null
       },
       "customName": "Average Returning User Order Value",
-      "query": "select avg(revenueproperty) as \"Average Returning User Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS false",
+      "query": "select avg(revenueproperty) as \"Average Returning User Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS false",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -256,7 +256,7 @@
         "managementZone": null
       },
       "customName": " ",
-      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep ",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep ",
       "type": "LINE_CHART"
     },
     {

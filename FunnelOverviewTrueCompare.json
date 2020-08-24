@@ -36,7 +36,7 @@
     "managementZone": null
    },
    "customName": "Revenue",
-   "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep",
+   "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
    "type": "SINGLE_VALUE",
    "timeFrameShift": "dynamic"
   },
@@ -74,7 +74,7 @@
     "managementZone": null
    },
    "customName": "Risk Revenue",
-   "query": "select sum(revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+   "query": "select sum(revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
    "type": "SINGLE_VALUE",
    "timeFrameShift": "dynamic"
   },
@@ -245,7 +245,7 @@
     "managementZone": null
    },
    "customName": "New User Revenue",
-   "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS true",
+   "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS true",
    "type": "SINGLE_VALUE",
    "timeFrameShift": "dynamic"
   },
@@ -264,7 +264,7 @@
     "managementZone": null
    },
    "customName": "Requests",
-   "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep",
+   "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
    "type": "SINGLE_VALUE",
    "timeFrameShift": "dynamic"
   },

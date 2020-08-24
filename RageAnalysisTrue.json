@@ -154,7 +154,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83D\uDE03",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tnumberOfRageClicks=0 and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tnumberOfRageClicks=0 and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -172,7 +172,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83D\uDE41",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tnumberOfRageClicks BETWEEN 1 and 3 and CombinedStep and\n\trevenueproperty>0",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tnumberOfRageClicks BETWEEN 1 and 3 and LastFunnelStep and\n\trevenueproperty>0",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -190,7 +190,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83D\uDE22",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tnumberOfRageClicks> 3 and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tnumberOfRageClicks> 3 and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{

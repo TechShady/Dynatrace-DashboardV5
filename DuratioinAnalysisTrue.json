@@ -154,7 +154,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udc0e",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tduration<=60000 and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tduration<=60000 and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -172,7 +172,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udc07",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tduration>60000 AND duration<=180000 and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tduration>60000 AND duration<=180000 and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -190,7 +190,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udc22",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tduration>180000 and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\tduration>180000 and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{

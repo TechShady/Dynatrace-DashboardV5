@@ -154,7 +154,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\ude00",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\ttotalErrorCount=0 and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\ttotalErrorCount=0 and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -172,7 +172,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\ude12",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\ttotalErrorCount IN (1,2) and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\ttotalErrorCount IN (1,2) and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -190,7 +190,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\ude22",
-			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\ttotalErrorCount > 2 and CombinedStep and\n\trevenueproperty>0\n",
+			"query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and\n\ttotalErrorCount > 2 and LastFunnelStep and\n\trevenueproperty>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{

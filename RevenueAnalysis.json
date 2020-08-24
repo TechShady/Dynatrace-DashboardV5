@@ -36,7 +36,7 @@
         "managementZone": null
       },
       "customName": " ",
-      "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep",
+      "query": "select sum(revenueproperty) as \"Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -55,7 +55,7 @@
         "managementZone": null
       },
       "customName": " ",
-      "query": "select avg(revenueproperty) as \"Avg Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep",
+      "query": "select avg(revenueproperty) as \"Avg Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -74,7 +74,7 @@
         "managementZone": null
       },
       "customName": " ",
-      "query": "select sum(revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+      "query": "select sum(revenueproperty) as \"Risk Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -93,7 +93,7 @@
         "managementZone": null
       },
       "customName": " ",
-      "query": "select avg(revenueproperty) as \"Avg Risk Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+      "query": "select avg(revenueproperty) as \"Avg Risk Order Value\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -150,7 +150,7 @@
         "managementZone": null
       },
       "customName": " ",
-      "query": "select sum(revenueproperty) as \"New User Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS true",
+      "query": "select sum(revenueproperty) as \"New User Revenue\" FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS true",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -169,7 +169,7 @@
         "managementZone": null
       },
       "customName": "Revenue by City",
-      "query": "SELECT City, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep   group by City order by sum(revenueproperty) desc",
+      "query": "SELECT City, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep   group by City order by sum(revenueproperty) desc",
       "type": "PIE_CHART"
     },
     {
@@ -187,7 +187,7 @@
         "managementZone": null
       },
       "customName": "Revenue by User Experience",
-      "query": "SELECT userExperienceScore, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep   group by userExperienceScore order by sum(revenueproperty) desc",
+      "query": "SELECT userExperienceScore, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep   group by userExperienceScore order by sum(revenueproperty) desc",
       "type": "PIE_CHART"
     },
     {
@@ -205,7 +205,7 @@
         "managementZone": null
       },
       "customName": "Risk Revenue by City",
-      "query": "SELECT City, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")   group by City order by sum(revenueproperty) desc",
+      "query": "SELECT City, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")   group by City order by sum(revenueproperty) desc",
       "type": "PIE_CHART"
     },
     {
@@ -223,7 +223,7 @@
         "managementZone": null
       },
       "customName": "Risk Revenue by User Experience",
-      "query": "SELECT userExperienceScore, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")   group by userExperienceScore order by sum(revenueproperty) desc",
+      "query": "SELECT userExperienceScore, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")   group by userExperienceScore order by sum(revenueproperty) desc",
       "type": "PIE_CHART"
     },
     {
@@ -277,7 +277,7 @@
         "managementZone": null
       },
       "customName": "New User Revenue by City",
-      "query": "SELECT City, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS true   group by City order by sum(revenueproperty) desc",
+      "query": "SELECT City, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS true   group by City order by sum(revenueproperty) desc",
       "type": "PIE_CHART"
     },
     {
@@ -295,7 +295,7 @@
         "managementZone": null
       },
       "customName": "New User Revenue by User Experience",
-      "query": "SELECT userExperienceScore, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and CombinedStep and newUser IS true   group by userExperienceScore order by sum(revenueproperty) desc",
+      "query": "SELECT userExperienceScore, sum(revenueproperty) FROM usersession where useraction.application=\"MyApp\" MyFilter and LastFunnelStep and newUser IS true   group by userExperienceScore order by sum(revenueproperty) desc",
       "type": "PIE_CHART"
     },
     {
