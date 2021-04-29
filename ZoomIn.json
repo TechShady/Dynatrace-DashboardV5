@@ -30,7 +30,7 @@
         "height": 798
       },
       "tileFilter": {},
-      "customName": "!PU(usqlcolor):colors=#7c38a1,#fff29a,#aeebf0,#debbf3,#ffa86c,#f5d30f,#008cdb,#ffcc99,#a972cc,#ffcba4 !PU(menu):name=Zoom Out;url=#dashboard;id=1f993e62-c4b7-4ba3-9b05-7f426362ed00",
+      "customName": "!PU(usqlcolor):colors=#7c38a1,#fff29a,#aeebf0,#debbf3,#ffa86c,#f5d30f,#008cdb,#ffcc99,#a972cc,#ffcba4 !PU(menu):name=ZoomOut;url=#dashboard;id=1f993e62-c4b7-4ba3-9b05-7f426362ed00",
       "query": "SELECT distinct datetime(endtime,\"M-d HH:mm\",\"2m\"), \nCONDITION(count(*), WHERE ${journey.where-1}) AS \"${journey.header-1}\", \nCONDITION(count(*), WHERE ${journey.where-1} and ${journey.where-2}) AS \"${journey.header-2}\", \nCONDITION(count(*), WHERE ${journey.where-1} and ${journey.where-2} and ${journey.where-last}) AS \"${journey.header-last}\" \nfrom usersession",
       "type": "LINE_CHART",
       "visualizationConfig": {
