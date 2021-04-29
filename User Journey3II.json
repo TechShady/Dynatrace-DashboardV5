@@ -34,6 +34,19 @@
       "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91;tooltip=Click for Help"
     },
     {
+      "name": "HelpIcon2",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=c2a52da8-46a1-4b11-bc15-a3da2cd15319;tooltip=Click for Zoom"
+    },
+    {
       "name": "Steps Timeseries Query",
       "tileType": "DTAQL",
       "configured": true,
