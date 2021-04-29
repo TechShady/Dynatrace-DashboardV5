@@ -86,7 +86,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(table):col=-6",
-      "query": "Select userSessionId as \"Sessions\",duration/100 as \"Duration (s)\",useractioncount as \"Action Count\",totalerrorcount as \"Error Count\",numberOfRageClicks as \"Rage Count\",(duration / userActionCount) as \"Engagement Rate\", (numberOfRageClicks*100/useractioncount) as \"Rage Rate\", (totalErrorCount*100/useractioncount) as \"Error Rate\" FROM usersession where ${journey.where-10}  ${uspClause} and ${property.usql} IS NOT NULL order by duration desc",
+      "query": "Select userSessionId as \"Sessions\",duration/100 as \"Duration (s)\",${property2.usql} as \"Split\",useractioncount as \"Action Count\",totalerrorcount as \"Error Count\",numberOfRageClicks as \"Rage Count\",(duration / userActionCount) as \"Engagement Rate\", (numberOfRageClicks*100/useractioncount) as \"Rage Rate\", (totalErrorCount*100/useractioncount) as \"Error Rate\" FROM usersession where ${journey.where-10}  ${uspClause} and ${property.usql} IS NOT NULL order by duration desc",
       "type": "TABLE",
       "limit": 50
     },
@@ -102,7 +102,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(table):",
-      "query": "Select duration/100 as \"Duration (s)\", apdexCategory, errorCount, isEntryAction, isExitAction FROM useraction where ${journey.where-10}  ${uspClause} and ${property.usql} IS NOT NULL order by duration desc",
+      "query": "Select duration/100 as \"Duration (s)\",${property2.usql} as \"Split\", apdexCategory, errorCount, isEntryAction, isExitAction FROM useraction where ${journey.where-10}  ${uspClause} and ${property.usql} IS NOT NULL order by duration desc",
       "type": "TABLE",
       "limit": 50
     }
