@@ -34,24 +34,6 @@
       "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91;tooltip=Click_for_Help"
     },
     {
-      "name": "Steps Timeseries Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 418,
-        "left": 152,
-        "width": 1140,
-        "height": 418
-      },
-      "tileFilter": {},
-      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c2a52da8-46a1-4b11-bc15-a3da2cd15319",
-      "query": "SELECT distinct datetime(endtime,\"M-d HH:mm\",\"4m\"), \nCONDITION(count(*), WHERE ${journey.where-1}) AS \"${journey.header-1}\", \nCONDITION(count(*), WHERE ${journey.where-1} and ${journey.where-2}) AS \"${journey.header-2}\", \nCONDITION(count(*), WHERE ${journey.where-1} and ${journey.where-2} and ${journey.where-last}) AS \"${journey.header-last}\" \nfrom usersession",
-      "type": "LINE_CHART",
-      "visualizationConfig": {
-        "hasAxisBucketing": false
-      }
-    },
-    {
       "name": "SessionsHeader",
       "tileType": "MARKDOWN",
       "configured": true,
@@ -336,7 +318,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(menu):name=Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331331 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
-      "query": "SELECT FUNNEL(${journey.where-1} AS \"${journey.header-1}\",${journey.where-2} AS \"${journey.header-2}\",${journey.where-last} AS \"${journey.header-last}\") FROM usersession where useraction.application in (\"${app.name}\")",
+      "query": "SELECT FUNNEL(${journey.where-1} AS \"${journey.header-1}\",${journey.where-2} AS \"${journey.header-2}\",${journey.where-last} AS \"${journey.header-last}\") FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic"
     },
@@ -458,6 +440,24 @@
       "markdown": "!PU(math):exp=(a);scope=a:lnksteplastexits;full=false\n\n# Site Exits\n\n\n!PU(menu):name=Analysis;url=${url}/ui/applications/${journey.methods-last}/mda?analysisType=PAGES\n!PU(menu):name=Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331331\n!PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
+      "name": "Steps Timeseries Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 152,
+        "width": 1140,
+        "height": 418
+      },
+      "tileFilter": {},
+      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c2a52da8-46a1-4b11-bc15-a3da2cd15319",
+      "query": "SELECT distinct datetime(endtime,\"M-d HH:mm\",\"4m\"), \nCONDITION(count(*), WHERE ${journey.where-1}) AS \"${journey.header-1}\", \nCONDITION(count(*), WHERE ${journey.where-1} and ${journey.where-2}) AS \"${journey.header-2}\", \nCONDITION(count(*), WHERE ${journey.where-1} and ${journey.where-2} and ${journey.where-last}) AS \"${journey.header-last}\" \nfrom usersession where useraction.application in (\"${app.name}\") ${uspClause}",
+      "type": "LINE_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      }
+    },
+    {
       "name": "Step1 Count Worker Query",
       "tileType": "DTAQL",
       "configured": true,
@@ -469,7 +469,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep1",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1}",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} ${uspClause}",
       "type": "SINGLE_VALUE"
     },
     {
@@ -484,7 +484,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep1abandons",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and not ${journey.where-2}",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and not ${journey.where-2} ${uspClause}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -500,7 +500,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep2",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and ${journey.where-2}",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and ${journey.where-2} ${uspClause}",
       "type": "SINGLE_VALUE"
     },
     {
@@ -515,7 +515,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep2abandons",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and ${journey.where-2} and not ${journey.where-last}",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and ${journey.where-2} and not ${journey.where-last} ${uspClause}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -531,7 +531,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep3",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and ${journey.where-2} and ${journey.where-last}",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"${app.name}\") and ${journey.where-1} and ${journey.where-2} and ${journey.where-last} ${uspClause}",
       "type": "SINGLE_VALUE"
     },
     {
@@ -561,7 +561,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):funnelconversions",
-      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") and ${milestoneGoal} and  ${conversionGoal}",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") and ${milestoneGoal} and  ${conversionGoal} ${uspClause}",
       "type": "SINGLE_VALUE"
     },
     {
@@ -576,7 +576,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):funnelabandons",
-      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") and ${milestoneGoal} and not ${conversionGoal}",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") and ${milestoneGoal} and not ${conversionGoal} ${uspClause}",
       "type": "SINGLE_VALUE"
     },
     {
@@ -591,7 +591,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep1exits",
-      "query": "select count(*) from useraction where ${journey.where-1} and isExitAction=true",
+      "query": "select count(*) from useraction where ${journey.where-1} and isExitAction=true ${uspClause}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -607,7 +607,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep2exits",
-      "query": "select count(*) from useraction where ${journey.where-2} and isExitAction=true",
+      "query": "select count(*) from useraction where ${journey.where-2} and isExitAction=true ${uspClause}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -623,7 +623,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnksteplastexits",
-      "query": "select count(*) from useraction where ${journey.where-last} and isExitAction=true",
+      "query": "select count(*) from useraction where ${journey.where-last} and isExitAction=true ${uspClause}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -639,7 +639,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnksessions",
-      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") ",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}",
       "type": "SINGLE_VALUE"
     },
     {
@@ -654,7 +654,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkfunnelsessions",
-      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") and ${milestoneGoal}",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"${app.name}\") and ${milestoneGoal} ${uspClause}",
       "type": "SINGLE_VALUE"
     },
     {
