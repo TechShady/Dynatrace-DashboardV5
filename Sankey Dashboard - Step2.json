@@ -1,0 +1,53 @@
+ {
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.215.107.20210414-181420"
+  },
+  "id": "98ce6811-3cc8-4a15-b9ce-c57ebb331b82",
+  "dashboardMetadata": {
+    "name": "\uD83D\uDC8E Sankey Dashboard - ${journey.header-2}",
+    "shared": false,
+    "owner": "john.kelly@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS"
+    },
+    "tags": ["Sankey"]
+  },
+  "tiles": [
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 1672,
+        "height": 798
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):sankey1"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1292,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "UserJourneys !PU(sankey):link=sankey1;convHack=2;colors=apdex",
+      "query": "select useraction.name, useraction.matchingConversionGoals, useraction.apdexCategory, useraction.isEntryAction, useraction.isExitAction, useraction.stringProperties, useraction.doubleProperties, useraction.longProperties, useraction.dateProperties, useraction.duration, useraction.errorCount, userExperienceScore FROM usersession WHERE ${journey.where-2} and userType=\"REAL_USER\"",
+      "type": "TABLE",
+      "limit": 50
+    }
+  ]
+}

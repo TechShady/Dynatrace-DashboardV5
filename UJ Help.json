@@ -1,0 +1,73 @@
+ {
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.215.107.20210414-181420"
+  },
+  "id": "f920d184-d996-4249-b484-215222370b91",
+  "dashboardMetadata": {
+    "name": "User Journey Help",
+    "shared": false,
+    "owner": "john.kelly@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+    "tags": []
+  },
+  "tiles": [
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 0,
+        "width": 1672,
+        "height": 152
+      },
+      "tileFilter": {},
+      "markdown": "## The User Journey Dashboard is broken down into many sections. The top row shows the user journey steps. The second row show the abandon count for each step. The third row shows the APDEX score for each user journey step.\n![]()\n## The third row is configurable. If you scroll down below the third row, you will notice several timeseries graphs. You can swap out the third row with any of the timeseries graphs. Select the pin icon for your preferred graph and it will swap the APDEX row with the timeseries graph. You can then click the favorites icon to mark this as your preferred view.\n![]()\n"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 0,
+        "width": 1672,
+        "height": 190
+      },
+      "tileFilter": {},
+      "markdown": "## If you swap out the APDEX row with a timeseries graph, you will notice two links to the left of the timeseries tile. These are links to change the timeseries interval. The default timeframe is seven days. If you change the timeframe to another timeframe, the timeseries graphs will not automatically scale. The links to the left of the dashboard can be used to adjust the interval to your specific need.\n![]()\n## You will also notice many magnifying glass icons in this dashboard. Each icon is tied to a threshold that is configured during deployment. The icons will be green, yellow or red based on the threshold settings. Each icon is clickable and will drill you down to another dashboard for deeper analysis. If the icon is red, it's highly recommended to click the icon to begin triage. "
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 0,
+        "width": 1672,
+        "height": 190
+      },
+      "tileFilter": {},
+      "markdown": "![]()\n## The magnifying glass icons next to each user journey header will drill you down to a forensics dashboard. This dashboard will show the KPIs for sessions that continued to the next user journey step vs sessions that exited at this user journey step. Above each KPI is a link that exposes the sessions for each KPI. Click the link to drill into an individual session. For example, sessions that abandoned with high duration.\n![]()\n##The last user journey has a different drill down. Since there is no next user journey step, this drill down will take you to a conversion analysis dashboard.\n![]()\n## Explore the other magnifying links throughout the dashboard. Some will take you to a specific UI screen, others will take you to an analysis dashboard.\n![]()"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 0,
+        "width": 1672,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "## At the very bottom of this dashboard, you will notice several tiles minimized to the smallest settings. These are USQL tiles that run queries used to color the magnifying glass icons. These tiles should not be altered or deleted. Doing so will impact the coloring of certain magnifying glass icons on the dashboard."
+    }
+  ]
+}
