@@ -67,7 +67,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"2m\") as \"Start Time\",${property2.usql},CONDITION(count(${property2.usql}), where ${property.usql} IS NOT NULL) as \"Source\" FROM useraction where ${journey.where-10} and ${property.usql} IS NOT NULL",
+      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"2m\") as \"Start Time\",${property2.usql},CONDITION(avg(visuallyCompleteTime), where ${property.usql} IS NOT NULL) as \"Visually Complete\",CONDITION(count(${property2.usql}), where ${property.usql} IS NOT NULL) as \"Count\" FROM useraction where ${journey.where-10} ${uspClause} and ${property.usql} IS NOT NULL",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": false
