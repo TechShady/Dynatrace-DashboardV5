@@ -31,20 +31,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91;tooltip=Click for Help"
-    },
-    {
-      "name": "HelpIcon2",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 38,
-        "left": 0,
-        "width": 38,
-        "height": 38
-      },
-      "tileFilter": {},
-      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=c2a52da8-46a1-4b11-bc15-a3da2cd15319;tooltip=Click for Zoom"
+      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91;tooltip=Click_for_Help"
     },
     {
       "name": "Steps Timeseries Query",
@@ -88,7 +75,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80;tooltip=Click for Sankey Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80;tooltip=Click_for_Sankey_Analysis"
     },
     {
       "name": "AbandonsHeader",
@@ -114,7 +101,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=exit;link=funnelabandons;base=low;warn=200;crit=300;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e111505;tooltip=Click for Abandons Analysis"
+      "markdown": "!PU(svg):icon=exit;link=funnelabandons;base=low;warn=200;crit=300;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e111505;tooltip=Click_for_Abandons_Analysis"
     },
     {
       "name": "StepsHeader",
@@ -140,7 +127,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=${url}/ui/user-sessions/query?sessionquery=select%20userid%2C%20hasSessionReplay%2C%20useraction.matchingConversionGoals%20FROM%20usersession%20where${milestoneGoal}&visualization=TABLE;tooltip=Click for Journey Steps Analysis"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=${url}/ui/user-sessions/query?sessionquery=select%20userid%2C%20hasSessionReplay%2C%20useraction.matchingConversionGoals%20FROM%20usersession%20where${milestoneGoal}&visualization=TABLE;tooltip=Click_for_Journey_Steps_Analysis"
     },
     {
       "name": "Step1Header",
@@ -192,7 +179,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep1abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=12345678-3f03-4155-ac08-d8ea4a711111;tooltip=Click for ${journey.header-1} Forensics Analysis"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep1abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=12345678-3f03-4155-ac08-d8ea4a711111;tooltip=Click_for_${journey.header-1}_Forensics_Analysis"
     },
     {
       "name": "Step1WebPageIcon",
@@ -205,7 +192,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;url=${url}/ui/applications/${app-1.id}/mda?gtf=-2h%20to%20now&gf=all&analysisType=PAGES;tooltip=Click for ${journey.header-1} Page Analysis"
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;url=${url}/ui/applications/${app-1.id}/mda?gtf=-2h%20to%20now&gf=all&analysisType=PAGES;tooltip=Click_for_${journey.header-1}_Page_Analysis"
     },
     {
       "name": "Step1SankeyIcon",
@@ -218,7 +205,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81;tooltip=Click for ${journey.header-1} Sankey Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81;tooltip=Click_for_${journey.header-1}_Sankey_Analysis"
     },
     {
       "name": "Step1OverviewIcon",
@@ -231,7 +218,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91;tooltip=Click for ${journey.header-1} Overview"
+      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91;tooltip=Click_for_${journey.header-1}_Overview"
     },
     {
       "name": "Step2ForensicsIcon",
@@ -244,7 +231,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep2abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112;tooltip=Click for ${journey.header-2} Forensics Analysis"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep2abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112;tooltip=Click_for_${journey.header-2}_Forensics_Analysis"
     },
     {
       "name": "Step2WebPageIcon",
@@ -257,7 +244,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=webpages;link=lnkstep2abandonrate;color=white;url=${url}/ui/applications/${app-1.id}/mda?gtf=-2h%20to%20now&gf=all&analysisType=PAGES;tooltip=Click for ${journey.header-2} Page Analysis"
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep2abandonrate;color=white;url=${url}/ui/applications/${app-1.id}/mda?gtf=-2h%20to%20now&gf=all&analysisType=PAGES;tooltip=Click_for_${journey.header-2}_Page_Analysis"
     },
     {
       "name": "Step2SankeyIcon",
@@ -270,7 +257,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep2abandonrate;color=white;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b82;tooltip=Click for ${journey.header-2} Sankey Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep2abandonrate;color=white;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b82;tooltip=Click_for_${journey.header-2}_Sankey_Analysis"
     },
     {
       "name": "Step2OverviewIcon",
@@ -283,7 +270,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnkstep2abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92;tooltip=Click for ${journey.header-2} Overview"
+      "markdown": "!PU(svg):icon=overview;link=lnkstep2abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92;tooltip=Click_for_${journey.header-2}_Overview"
     },
     {
       "name": "StepLastConversionIcon",
@@ -296,7 +283,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=conversions;link=funnelconversions;base=high;warn=20;crit=10;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e222505;tooltip=Click for Conversion Analysis"
+      "markdown": "!PU(svg):icon=conversions;link=funnelconversions;base=high;warn=20;crit=10;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e222505;tooltip=Click_for_Conversion_Analysis"
     },
     {
       "name": "StepLastWebPageIcon",
@@ -309,7 +296,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=webpages;link=lnksteplastabandonrate;color=white;url=${url}/ui/applications/${app-1.id}/mda?gtf=-2h%20to%20now&gf=all&analysisType=PAGES;tooltip=Click for ${journey.header-last} Page Analysis"
+      "markdown": "!PU(svg):icon=webpages;link=lnksteplastabandonrate;color=white;url=${url}/ui/applications/${app-1.id}/mda?gtf=-2h%20to%20now&gf=all&analysisType=PAGES;tooltip=Click_for_${journey.header-last}_Page_Analysis"
     },
     {
       "name": "StepLastSankeyIcon",
@@ -322,7 +309,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnksteplastabandonrate;color=white;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331331;tooltip=Click for ${journey.header-last} Sankey Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnksteplastabandonrate;color=white;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331331;tooltip=Click_for_${journey.header-last}_Sankey_Analysis"
     },
     {
       "name": "StepLastOverviewIcon",
@@ -335,7 +322,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnksteplastabandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93;tooltip=Click for ${journey.header-2} Overview"
+      "markdown": "!PU(svg):icon=overview;link=lnksteplastabandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93;tooltip=Click_for_${journey.header-2}_Overview"
     },
     {
       "name": "Funnel Query",
