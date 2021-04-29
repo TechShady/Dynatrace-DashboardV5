@@ -85,7 +85,7 @@
         "height": 380
       },
       "tileFilter": {},
-      "customName": "!PU(table):col=-6",
+      "customName": "!PU(table):col=-7",
       "query": "Select userSessionId as \"Sessions\",duration/100 as \"Duration (s)\",${property2.usql} as \"Split\",useractioncount as \"Action Count\",totalerrorcount as \"Error Count\",numberOfRageClicks as \"Rage Count\",(duration / userActionCount) as \"Engagement Rate\", (numberOfRageClicks*100/useractioncount) as \"Rage Rate\", (totalErrorCount*100/useractioncount) as \"Error Rate\" FROM usersession where ${journey.where-8}  ${uspClause} and ${property.usql} IS NOT NULL order by duration desc",
       "type": "TABLE",
       "limit": 50
