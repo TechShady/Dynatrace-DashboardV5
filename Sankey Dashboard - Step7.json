@@ -45,7 +45,7 @@
       },
       "tileFilter": {},
       "customName": "UserJourneys !PU(sankey):link=sankey1;convHack=2;colors=apdex",
-      "query": "select useraction.name, useraction.matchingConversionGoals, useraction.apdexCategory, useraction.isEntryAction, useraction.isExitAction, useraction.stringProperties, useraction.doubleProperties, useraction.longProperties, useraction.dateProperties, useraction.duration, useraction.errorCount, userExperienceScore FROM usersession WHERE ${journey.where-7} and userType=\"REAL_USER\"",
+      "query": "select useraction.name, useraction.matchingConversionGoals, useraction.apdexCategory, useraction.isEntryAction, useraction.isExitAction, useraction.stringProperties, useraction.doubleProperties, useraction.longProperties, useraction.dateProperties, useraction.duration, useraction.errorCount, userExperienceScore FROM usersession WHERE ${journey.where-7} and userType=\"REAL_USER\" ${uspClause}",
       "type": "TABLE",
       "limit": 50
     }
