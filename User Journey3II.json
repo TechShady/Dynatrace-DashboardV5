@@ -21,6 +21,22 @@
   },
   "tiles": [
     {
+      "name": "Funnel Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 152,
+        "width": 1140,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "!PU(menu):name=Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331331 !PU(menu):name=Application_Overview;url=#dashboard;id=ebe9b732-d49e-4a40-997e-8577ef6bcbeb !PU(menu):name=Payment_Overview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2666 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
+      "query": "SELECT FUNNEL(${journey.where-1} AS \"${journey.header-1}\",${journey.where-2} AS \"${journey.header-2}\",${journey.where-last} AS \"${journey.header-last}\") FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}",
+      "type": "FUNNEL",
+      "timeFrameShift": "dynamic"
+    },
+    {
       "name": "HelpIcon",
       "tileType": "MARKDOWN",
       "configured": true,
@@ -305,22 +321,6 @@
       },
       "tileFilter": {},
       "markdown": "!PU(svg):icon=overview;link=lnksteplastabandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93;tooltip=Click_for_${journey.header-2}_Overview"
-    },
-    {
-      "name": "Funnel Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 38,
-        "left": 152,
-        "width": 1140,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "!PU(menu):name=Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331331 !PU(menu):name=Application_Overview;url=#dashboard;id=ebe9b732-d49e-4a40-997e-8577ef6bcbeb !PU(menu):name=Payment_Overview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f20f5 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
-      "query": "SELECT FUNNEL(${journey.where-1} AS \"${journey.header-1}\",${journey.where-2} AS \"${journey.header-2}\",${journey.where-last} AS \"${journey.header-last}\") FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}",
-      "type": "FUNNEL",
-      "timeFrameShift": "dynamic"
     },
     {
       "name": "Step1 Abandons Count",
