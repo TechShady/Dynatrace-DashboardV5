@@ -27,7 +27,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Browser",
-      "query": "select distinct top(usersession.browserMajorVersion,10),count(*) as \"Count\" FROM useraction where useraction.application=\"Gogo Inflight Production\" ",
+      "query": "select distinct top(usersession.browserMajorVersion,10),count(*) as \"Count\" FROM useraction where ${milestoneGoal}",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -43,7 +43,7 @@
       },
       "tileFilter": {},
       "customName": "Error Count by Browser",
-      "query": "select distinct top(usersession.browserMajorVersion,10), CONDITION(count(*), WHERE errorCount>0) as \"Count\" FROM useraction where useraction.application=\"Gogo Inflight Production\" ",
+      "query": "select distinct top(usersession.browserMajorVersion,10), CONDITION(count(*), WHERE errorCount>0) as \"Count\" FROM useraction where ${milestoneGoal}",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -58,8 +58,8 @@
         "height": 304
       },
       "tileFilter": {},
-      "customName": "Visually Complete by Airline !PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"10m\") as \"Start Time\", usersession.stringProperties.airline,CONDITION(avg(visuallyCompleteTime), where usersession.stringProperties.airline IS NOT NULL) as \"Visually Complete\" FROM useraction where usersession.stringProperties.airline IS NOT NULL",
+      "customName": "Visually Complete by ${uspClause.key} !PU(usqlstack):colors=green,blue,#aabbcc",
+      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"10m\") as \"Start Time\", ${uspClause.key},CONDITION(avg(visuallyCompleteTime), where ${uspClause.key} IS NOT NULL) as \"Visually Complete\" FROM useraction where ${uspClause.key} IS NOT NULL",
       "type": "COLUMN_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": true
@@ -77,8 +77,8 @@
         "height": 304
       },
       "tileFilter": {},
-      "customName": "Error Count by Airline !PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"10m\") as \"Start Time\", usersession.stringProperties.airline,CONDITION(count(usersession.totalErrorCount), where usersession.stringProperties.airline IS NOT NULL) as \"Count\" FROM useraction where usersession.stringProperties.airline IS NOT NULL",
+      "customName": "Error Count by ${uspClause.key} !PU(usqlstack):colors=green,blue,#aabbcc",
+      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"10m\") as \"Start Time\", ${uspClause.key},CONDITION(count(usersession.totalErrorCount), where ${uspClause.key} IS NOT NULL) as \"Count\" FROM useraction where ${uspClause.key} IS NOT NULL",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": true
@@ -97,7 +97,7 @@
       },
       "tileFilter": {},
       "customName": "Session Count",
-      "query": "select count(*) as \" \" from usersession where useraction.application=\"Gogo Inflight Production\"",
+      "query": "select count(*) as \" \" from usersession where ${milestoneGoal}",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -113,7 +113,7 @@
       },
       "tileFilter": {},
       "customName": "Real User Count",
-      "query": "select count(*) as \" \" from usersession where useraction.application=\"Gogo Inflight Production\" and userType=\"REAL_USER\"",
+      "query": "select count(*) as \" \" from usersession where ${milestoneGoal} and userType=\"REAL_USER\"",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -129,7 +129,7 @@
       },
       "tileFilter": {},
       "customName": "New User Count",
-      "query": "select count(*) as \" \" from usersession where useraction.application=\"Gogo Inflight Production\" and newUser=true",
+      "query": "select count(*) as \" \" from usersession where ${milestoneGoal} and newUser=true",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -145,7 +145,7 @@
       },
       "tileFilter": {},
       "customName": "User Action Overview",
-      "query": "select distinct useraction.name as \"User Action\", count(*) as \"Requests\", CONDITION(count(*), where useraction.isEntryAction=true) as \"Entry Count\", CONDITION(count(*), where useraction.isExitAction=true) as \"Exit Count\", CONDITION(COUNT(*), where usersession.bounce=true) as \"Bounce Count\", avg(duration) as \"Duration\" FROM useraction where useraction.application=\"Gogo Inflight Production\"",
+      "query": "select distinct useraction.name as \"User Action\", count(*) as \"Requests\", CONDITION(count(*), where useraction.isEntryAction=true) as \"Entry Count\", CONDITION(count(*), where useraction.isExitAction=true) as \"Exit Count\", CONDITION(COUNT(*), where usersession.bounce=true) as \"Bounce Count\", avg(duration) as \"Duration\" FROM useraction where ${milestoneGoal}",
       "type": "TABLE",
       "limit": 50
     },
@@ -161,7 +161,7 @@
       },
       "tileFilter": {},
       "customName": "Conversion Goals",
-      "query": "select distinct useraction.matchingConversionGoals as \"Conversion Goals\",count(*) as \"Count\" FROM useraction where useraction.application=\"Gogo Inflight Production\" and useraction.matchingConversionGoals IS NOT NULL",
+      "query": "select distinct useraction.matchingConversionGoals as \"Conversion Goals\",count(*) as \"Count\" FROM useraction where useraction.matchingConversionGoals IS NOT NULL",
       "type": "TABLE",
       "limit": 50
     },

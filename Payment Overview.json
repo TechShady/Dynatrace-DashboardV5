@@ -27,7 +27,7 @@
       },
       "tileFilter": {},
       "customName": "Payment Apdex",
-      "query": "select distinct userExperienceScore,count(*) as \"Count\" FROM usersession where useraction.application=\"Gogo Inflight Production\" and stringProperties.paymenttype IS NOT NULL",
+      "query": "select distinct userExperienceScore,count(*) as \"Count\" FROM usersession where ${milestoneGoal} and stringProperties.paymenttype IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -43,7 +43,7 @@
       },
       "tileFilter": {},
       "customName": "Payment Browser",
-      "query": "select distinct browserFamily,count(*) as \"Count\" FROM usersession where useraction.application=\"Gogo Inflight Production\" and browserFamily IS NOT NULL",
+      "query": "select distinct browserFamily,count(*) as \"Count\" FROM usersession where ${milestoneGoal} and browserFamily IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -59,7 +59,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Payment Type",
-      "query": "select distinct stringProperties.paymenttype as \"Payment Type\",CONDITION(COUNT(*), WHERE userExperienceScore=\"SATISFIED\") as \"Satisfied Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"TOLERATED\") as \"Tolerated Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"FRUSTRATED\") as \"Frustrated Count\",count(*) as \"Total Count\" FROM usersession where useraction.application=\"Gogo Inflight Production\" and stringProperties.paymenttype IS NOT NULL",
+      "query": "select distinct stringProperties.paymenttype as \"Payment Type\",CONDITION(COUNT(*), WHERE userExperienceScore=\"SATISFIED\") as \"Satisfied Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"TOLERATED\") as \"Tolerated Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"FRUSTRATED\") as \"Frustrated Count\",count(*) as \"Total Count\" FROM usersession where ${milestoneGoal} and stringProperties.paymenttype IS NOT NULL",
       "type": "TABLE",
       "limit": 50
     },
