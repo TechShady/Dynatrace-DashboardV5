@@ -10,6 +10,10 @@
     "name": "Payment Overview",
     "shared": false,
     "owner": "john.kelly@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
     "dashboardFilter": {
       "timeframe": "l_2_HOURS"
     }
