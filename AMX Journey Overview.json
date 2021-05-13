@@ -1,0 +1,189 @@
+ {
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.216.107.20210505-135918"
+  },
+  "id": "78b1f7dd-1bd7-4a09-bedd-86c96c013ec9",
+  "dashboardMetadata": {
+    "name": "💎 ${uspClause.value} Journey Overview",
+    "shared": false,
+    "owner": "john.kelly@dynatrace.com",
+    "tags": [
+      "User Journey",
+      "Configurator"
+    ]
+  },
+  "tiles": [
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1330,
+        "left": 0,
+        "width": 190,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnk1\n1=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n2=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n3=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 114,
+        "width": 456,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "$0 Product !PU(funnel):mode=height;small=5;big=10;links=lnk1",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "type": "FUNNEL",
+      "timeFrameShift": "dynamic",
+      "limit": 50
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1330,
+        "left": 190,
+        "width": 190,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnk2\n1=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n2=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n3=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n4=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1330,
+        "left": 380,
+        "width": 190,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnk3\n1=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n2=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n3=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n4=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n5=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1330,
+        "left": 570,
+        "width": 190,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnk4\n1=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n2=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n3=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n4=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n5=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n6=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1330,
+        "left": 760,
+        "width": 190,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnk5\n1=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n2=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n3=#dashboard;id=bbbbbbbb-a003-a019-0000-000000000004\n"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 114,
+        "width": 456,
+        "height": 456
+      },
+      "tileFilter": {},
+      "customName": "All Day New !PU(funnel):mode=height;small=5;big=10;links=lnk2",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"payment/create_account\") AS \"Create Account\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "type": "FUNNEL",
+      "timeFrameShift": "dynamic",
+      "limit": 50
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 570,
+        "width": 456,
+        "height": 380
+      },
+      "tileFilter": {},
+      "customName": "Active Subscription !PU(funnel):mode=height;small=5;big=10;links=lnk3",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "type": "FUNNEL",
+      "timeFrameShift": "dynamic",
+      "limit": 50
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 570,
+        "width": 456,
+        "height": 456
+      },
+      "tileFilter": {},
+      "customName": "Timed Pass !PU(funnel):mode=height;small=5;big=10;links=lnk4",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/checkout\") AS \"Payment Checkout\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "type": "FUNNEL",
+      "timeFrameShift": "dynamic",
+      "limit": 50
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1026,
+        "width": 570,
+        "height": 532
+      },
+      "tileFilter": {},
+      "customName": "All Day Returning !PU(funnel):mode=height;small=5;big=10;links=lnk5",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"payment/checkout\") AS \"Payment Checkout\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "type": "FUNNEL",
+      "timeFrameShift": "dynamic",
+      "limit": 50
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 1026,
+        "width": 570,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "Funnel Entries",
+      "query": "select distinct DATETIME(starttime,\"HH:mm\",\"20m\") as \"Start Time\",count(*) as \"Sessions\"\nFROM usersession where stringProperties.airline=\"${uspClause.value}\"",
+      "type": "COLUMN_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      },
+      "limit": 50
+    }
+  ]
+}
