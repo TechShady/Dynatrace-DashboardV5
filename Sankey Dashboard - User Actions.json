@@ -7,7 +7,7 @@
   },
   "id": "98ce6811-3cc8-4a15-b9ce-c57ebb331b80",
   "dashboardMetadata": {
-    "name": "\uD83D\uDC8E Sankey Dashboard - User Actions",
+    "name": "\uD83D\uDC8E ${uspClause.value} Sankey Dashboard - User Actions",
     "shared": false,
     "owner": "john.kelly@dynatrace.com",
         "sharingDetails": {
@@ -17,7 +17,7 @@
     "dashboardFilter": {
       "timeframe": "l_2_HOURS"
     },
-    "tags": ["Sankey"]
+    "tags": ["Sankey","${uspClause.value}"]
   },
   "tiles": [
     {
