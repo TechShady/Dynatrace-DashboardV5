@@ -34,7 +34,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=bbbbbbbb-a003-a019-0004-000000000004;tooltip=Click_for_Help"
+      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91;tooltip=Click_for_Help"
     },
     {
       "name": "SessionsHeader",
@@ -60,7 +60,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=#dashboard;id=bbbbbbbb-a003-a019-0005-000000000004;tooltip=Click_for_Sankey_Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80;tooltip=Click_for_Sankey_Analysis"
     },
     {
       "name": "AbandonsHeader",
@@ -86,7 +86,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=exit;link=funnelabandons;base=low;warn=200;crit=300;url=#dashboard;id=bbbbbbbb-a003-a019-0006-000000000004;tooltip=Click_for_Abandons_Analysis"
+      "markdown": "!PU(svg):icon=exit;link=funnelabandons;base=low;warn=200;crit=300;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e111505;tooltip=Click_for_Abandons_Analysis"
     },
     {
       "name": "StepsHeader",
@@ -682,7 +682,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(menu):name=Payment Overview;url=#dashboard;id=bbbbbbbb-a003-a019-0001-000000000004 !PU(menu):name=Application Overview;url=#dashboard;id=bbbbbbbb-a003-a019-0002-000000000004  !PU(menu):name=${uspClause.value} App Overview;url=#dashboard;id=f82ab5d0-e026-4bbc-b5f7-832e8c350714 !PU(menu):name=Sankey;url=#dashboard;id=bbbbbbbb-a003-a019-0003-000000000004 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
-      "query": "SELECT FUNNEL(((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) AS \"Splash\",((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) AS \"Sign In\",((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\")) AS \"Process Order\") FROM usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
       "limit": 50
