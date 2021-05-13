@@ -1,0 +1,214 @@
+﻿{
+	"metadata": {
+		"configurationVersions": [
+			2
+		],
+		"clusterVersion": "1.175.0.20190729-125021"
+	},
+	"id": "0d81ee7c-f7ba-4626-a086-60b76e111505",
+	"dashboardMetadata": {
+		"name": "${uspClause.value} Abandon Analysis",
+		"shared": true,
+		"owner": "MyEmail",
+		"sharingDetails": {
+			"linkShared": true,
+			"published": true
+		},
+		"dashboardFilter": {
+			"timeframe": "l_2_HOURS",
+			"managementZone": null
+		},
+    "tags": ["${uspClause.value}", "Analysis"]
+
+	},
+    "tiles": [{
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 874,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": "!PU(color):base=low;warn=${MyAbandonsSATW};crit=${MyAbandonsSATC}",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and userExperienceScore=\"SATISFIED\" and (useraction.matchingConversionGoals=/"Splash/") and not (useraction.matchingConversionGoals=/"Activate/")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 494,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": "!PU(color):base=low;warn=${MyAbandonsSATW};crit=${MyAbandonsSATC}",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and userExperienceScore=\"TOLERATED\" and (useraction.matchingConversionGoals=/"Splash/") and not (useraction.matchingConversionGoals=/"Activate/")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 874,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": "!PU(color):base=low;warn=${MyAbandonsSATW};crit=${MyAbandonsSATC}",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and userExperienceScore=\"FRUSTRATED\" and (useraction.matchingConversionGoals=/"Splash/") and not (useraction.matchingConversionGoals=/"Activate/")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 874,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Satisfied Abandons](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20and%20useraction.matchingConversionGoals=%22Splash%22%20and%20not%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 494,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Tolerated Abandons](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20and%20useraction.matchingConversionGoals=%22Splash%22%20and%20not%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 874,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Frustrated Abandons](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20and%20useraction.matchingConversionGoals=%22Splash%22%20and%20not%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
+    }, {
+        "name": "Abandons Over Time",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Abandons by ${split.id}",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 494,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": "!PU(color):base=low;warn=${MyAbandonsSATW};crit=${MyAbandonsSATC}",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and (useraction.matchingConversionGoals=/"Splash/") and not (useraction.matchingConversionGoals=/"Activate/")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 494,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Overall Abandons](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%20useraction.matchingConversionGoals=%22Splash%22%20and%20not%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
+    }, {
+        "name": " ",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 380,
+            "left": 0,
+            "width": 1672,
+            "height": 418
+        },
+        "tileFilter": {},
+        "customName": "!PU(usqlstack):vals=SATISFIED,TOLERATED,FRUSTRATED;colors=green,yellow,red",
+        "query": "select distinct datetime(endtime,\"HH:mm\",\"10m\"), count(*) as \"Abandons\", userExperienceScore from usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and (useraction.matchingConversionGoals=/"Splash/") and not (useraction.matchingConversionGoals=/"Activate/")",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": false
+        },
+        "limit": 50
+    }, {
+        "name": "Abandons by Browser",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1216,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1216,
+            "width": 456,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "!PU(usqlcolor):colors=#4363d8,#FFCB05,#3cb44b,#f58231,#911eb4,#42d4f4,#f032e6,#bfef45,#fabed4,#469990,#e6beff,#9a6324,#fffac8,#800000,#aaffc3,#808000,#ffd8b1,#000075,#a9a9a9,#ffffff,#000000",
+        "query": "SELECT browserFamily, count(userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and (useraction.matchingConversionGoals=/"Splash/") and not (useraction.matchingConversionGoals=/"Activate/") group by browserFamily order by count(userSessionId) desc",
+        "type": "PIE_CHART",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 456,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "!PU(usqlcolor):colors=#4363d8,#FFCB05,#3cb44b,#f58231,#911eb4,#42d4f4,#f032e6,#bfef45,#fabed4,#469990,#e6beff,#9a6324,#fffac8,#800000,#aaffc3,#808000,#ffd8b1,#000075,#a9a9a9,#ffffff,#000000",
+        "query": "SELECT ${split.usql}, count(userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and (useraction.matchingConversionGoals=/"Splash/") and not (useraction.matchingConversionGoals=/"Activate/") group by ${split.usql} order by count(userSessionId) desc",
+        "type": "PIE_CHART",
+        "limit": 50
+    }]
+}
