@@ -56,7 +56,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(table):col=-6",
-      "query": "Select userSessionId as \"Sessions\",duration/100 as \"Duration (s)\",${split.usql} as \"${split.id}\",useractioncount as \"Action Count\",numberOfRageClicks as \"Rage Cnt\",(duration / userActionCount) as \"Engagement Rate\", (numberOfRageClicks*100/useractioncount) as \"Rage Rate\", (totalErrorCount*100/useractioncount) as \"Error Rate\" FROM usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\" ${uspClause} ${uspClause.key} IS NOT NULL order by duration desc",
+      "query": "Select userSessionId as \"Sessions\",duration/100 as \"Duration (s)\",${split.usql} as \"${split.id}\",useractioncount as \"Action Count\",numberOfRageClicks as \"Rage Cnt\",(duration / userActionCount) as \"Engagement Rate\", (numberOfRageClicks*100/useractioncount) as \"Rage Rate\", (totalErrorCount*100/useractioncount) as \"Error Rate\" FROM usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\" ${uspClause} and ${uspClause.key} IS NOT NULL order by duration desc",
       "type": "TABLE",
       "limit": 50
     },
@@ -72,7 +72,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"5m\") as \"Start Time\",${split.usql},CONDITION(avg(visuallyCompleteTime), where ${uspClause.key} IS NOT NULL) as \"Visually Complete\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} ${uspClause.key} IS NOT NULL",
+      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"5m\") as \"Start Time\",${split.usql},CONDITION(avg(visuallyCompleteTime), where and ${uspClause.key} IS NOT NULL) as \"Visually Complete\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} and ${uspClause.key} IS NOT NULL",
       "type": "COLUMN_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": true
@@ -115,7 +115,7 @@
       },
       "tileFilter": {},
       "customName": ".",
-      "query": "select distinct top(${split.usql},10),CONDITION(count(${split.usql}), where ${uspClause.key} IS NOT NULL) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} ${uspClause.key} IS NOT NULL ",
+      "query": "select distinct top(${split.usql},10),CONDITION(count(${split.usql}), where and ${uspClause.key} IS NOT NULL) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} and ${uspClause.key} IS NOT NULL ",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -131,7 +131,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"5m\") as \"Start Time\",${split.usql},CONDITION(count(usersession.totalErrorCount), where ${uspClause.key} IS NOT NULL) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} ${uspClause.key} IS NOT NULL",
+      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"5m\") as \"Start Time\",${split.usql},CONDITION(count(usersession.totalErrorCount), where and ${uspClause.key} IS NOT NULL) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} and ${uspClause.key} IS NOT NULL",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": true
@@ -150,7 +150,7 @@
       },
       "tileFilter": {},
       "customName": ".",
-      "query": "select distinct top(${split.usql},10),CONDITION(COUNT(*), where ${uspClause.key} IS NOT NULL and isExitAction=true) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} ${uspClause.key} IS NOT NULL ",
+      "query": "select distinct top(${split.usql},10),CONDITION(COUNT(*), where and ${uspClause.key} IS NOT NULL and isExitAction=true) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\"  ${uspClause} and ${uspClause.key} IS NOT NULL ",
       "type": "PIE_CHART",
       "limit": 50
     },
