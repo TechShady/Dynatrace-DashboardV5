@@ -34,7 +34,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91;tooltip=Click_for_Help"
+      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91"
     },
     {
       "name": "SessionsHeader",
@@ -60,7 +60,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80;tooltip=Click_for_Sankey_Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80"
     },
     {
       "name": "AbandonsHeader",
@@ -86,7 +86,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=exit;link=funnelabandons;base=low;warn=200;crit=300;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e111505;tooltip=Click_for_Abandons_Analysis"
+      "markdown": "!PU(svg):icon=exit;link=funnelabandons;base=low;warn=200;crit=300;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e111505"
     },
     {
       "name": "StepsHeader",
@@ -112,7 +112,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=https://zev64990.live.dynatrace.com/#uemapplications/performanceanalysis;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;visiblepart=action;gtf=l_2_HOURS;gf=all;filtr3ftf=custom1620935759542to1620937559542select1620936659542;filtr3sProp0-=airline%20s${uspClause.value};tooltip=Click_for_Journey_Steps_Analysis"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=https://zev64990.live.dynatrace.com/#uemapplications/performanceanalysis;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;visiblepart=action;gtf=l_2_HOURS;gf=all;filtr3ftf=custom1620935759542to1620937559542select1620936659542;filtr3sProp0-=airline%20s${uspClause.value}"
     },
     {
       "name": "Step1Header",
@@ -164,7 +164,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep1abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=12345678-a003-a019-0007-000000000004;tooltip=Click_for_Splash_Forensics_Analysis"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep1abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=12345678-a003-a019-0007-000000000004"
     },
     {
       "name": "Step1WebPageIcon",
@@ -190,7 +190,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81;tooltip=Click_for_Splash_Sankey_Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81"
     },
     {
       "name": "Step1OverviewIcon",
@@ -203,7 +203,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91;tooltip=Click_for_Splash_Overview"
+      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "Step2ForensicsIcon",
@@ -216,7 +216,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep2abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=12345678-a003-a019-0013-000000000004;tooltip=Click_for_Process_Order_Forensics_Analysis"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep2abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=12345678-a003-a019-0013-000000000004"
     },
     {
       "name": "Step2WebPageIcon",
@@ -242,7 +242,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep2abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82;tooltip=Click_for_Process_Order_Sankey_Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep2abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82"
     },
     {
       "name": "Step2OverviewIcon",
@@ -255,7 +255,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnkstep2abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92;tooltip=Click_for_Process_Order_Overview"
+      "markdown": "!PU(svg):icon=overview;link=lnkstep2abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
     },
     {
       "name": "StepLastConversionIcon",
@@ -268,7 +268,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=conversions;link=funnelconversions;base=high;warn=20;crit=10;url=#dashboard;id=12345678-a003-a019-0015-000000000004;tooltip=Click_for_Conversion_Analysis"
+      "markdown": "!PU(svg):icon=conversions;link=funnelconversions;base=high;warn=20;crit=10;url=#dashboard;id=12345678-a003-a019-0015-000000000004"
     },
     {
       "name": "StepLastWebPageIcon",
@@ -294,7 +294,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnksteplastabandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83;tooltip=Click_for_Activate_Sankey_Analysis"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnksteplastabandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83"
     },
     {
       "name": "StepLastOverviewIcon",
@@ -307,7 +307,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnksteplastabandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93;tooltip=Click_for_Activate_Overview"
+      "markdown": "!PU(svg):icon=overview;link=lnksteplastabandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "Step1 Abandons Count",
