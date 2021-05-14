@@ -10,6 +10,10 @@
     "name": "Application Overview",
     "shared": true,
     "owner": "john.kelly@dynatrace.com",
+		"sharingDetails": {
+			"linkShared": true,
+			"published": true
+		},
     "dashboardFilter": {
       "timeframe": "l_2_HOURS"
     },
