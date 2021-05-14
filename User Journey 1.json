@@ -681,7 +681,7 @@
         "height": 304
       },
       "tileFilter": {},
-      "customName": "!PU(menu):name=PaymentOverview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2666 !PU(menu):name=ApplicationOverview;url=#dashboard;id=ebe9b732-d49e-4a40-997e-8577ef6bcbeb !PU(menu):name=${uspClause.value}AppOverview;url=#dashboard;id=f82ab5d0-e026-4bbc-b5f7-832e8c350714 !PU(menu):name=Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
+      "customName": "!PU(menu):name=PaymentOverview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2666 !PU(menu):name=ApplicationOverview;url=#dashboard;id=7e2ffa59-d228-4074-8fa7-88dcbb678a3b !PU(menu):name=${uspClause.value}AppOverview;url=#dashboard;id=f82ab5d0-e026-4bbc-b5f7-832e8c350714 !PU(menu):name=Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
