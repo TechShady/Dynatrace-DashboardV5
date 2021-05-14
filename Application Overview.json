@@ -5,224 +5,310 @@
     ],
     "clusterVersion": "1.216.107.20210505-135918"
   },
-  "id": "ebe9b732-d49e-4a40-997e-8577ef6bcbeb",
+  "id": "bbbbbbbb-a003-a019-0017-000000000005",
   "dashboardMetadata": {
     "name": "Application Overview",
     "shared": true,
     "owner": "john.kelly@dynatrace.com",
-        "sharingDetails": {
-            "linkShared": true,
-            "published": false
-        },
     "dashboardFilter": {
       "timeframe": "l_2_HOURS"
-    }
+    },
+    "tags": [
+      "Configurator",
+      "Powerup"
+    ]
   },
   "tiles": [
     {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
+      "name": "User behavior",
+      "tileType": "SESSION_METRICS",
       "configured": true,
       "bounds": {
-        "top": 0,
-        "left": 0,
-        "width": 418,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Count by Browser",
-      "query": "select distinct top(usersession.browserMajorVersion,10),count(*) as \"Count\" FROM useraction where ${milestoneGoal}",
-      "type": "PIE_CHART",
-      "limit": 1000
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 0,
-        "left": 1254,
-        "width": 418,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Error Count by Browser",
-      "query": "select distinct top(usersession.browserMajorVersion,10), CONDITION(count(*), WHERE errorCount>0) as \"Count\" FROM useraction where ${milestoneGoal}",
-      "type": "PIE_CHART",
-      "limit": 1000
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 532,
-        "left": 912,
-        "width": 760,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Visually Complete by ${uspClause.key} !PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"10m\") as \"Start Time\", ${uspClause.key},CONDITION(avg(visuallyCompleteTime), where ${uspClause.key} IS NOT NULL) as \"Visually Complete\" FROM useraction where ${uspClause.key} IS NOT NULL",
-      "type": "COLUMN_CHART",
-      "visualizationConfig": {
-        "hasAxisBucketing": true
-      },
-      "limit": 1000
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 532,
-        "left": 0,
-        "width": 912,
-        "height": 304
-      },
-      "tileFilter": {},
-      "customName": "Error Count by ${uspClause.key} !PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"10m\") as \"Start Time\", ${uspClause.key},CONDITION(count(usersession.totalErrorCount), where ${uspClause.key} IS NOT NULL) as \"Count\" FROM useraction where ${uspClause.key} IS NOT NULL",
-      "type": "LINE_CHART",
-      "visualizationConfig": {
-        "hasAxisBucketing": true
-      },
-      "limit": 1000
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 304,
-        "left": 0,
+        "top": 38,
+        "left": 722,
         "width": 304,
-        "height": 228
-      },
-      "tileFilter": {},
-      "customName": "Session Count",
-      "query": "select count(*) as \" \" from usersession where ${milestoneGoal}",
-      "type": "SINGLE_VALUE",
-      "limit": 1000
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 304,
-        "left": 304,
-        "width": 304,
-        "height": 228
-      },
-      "tileFilter": {},
-      "customName": "Real User Count",
-      "query": "select count(*) as \" \" from usersession where ${milestoneGoal} and userType=\"REAL_USER\"",
-      "type": "SINGLE_VALUE",
-      "limit": 1000
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 304,
-        "left": 608,
-        "width": 304,
-        "height": 228
-      },
-      "tileFilter": {},
-      "customName": "New User Count",
-      "query": "select count(*) as \" \" from usersession where ${milestoneGoal} and newUser=true",
-      "type": "SINGLE_VALUE",
-      "limit": 1000
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 0,
-        "left": 418,
-        "width": 570,
         "height": 304
       },
       "tileFilter": {},
-      "customName": "User Action Overview",
-      "query": "select distinct useraction.name as \"User Action\", count(*) as \"Requests\", CONDITION(count(*), where useraction.isEntryAction=true) as \"Entry Count\", CONDITION(count(*), where useraction.isExitAction=true) as \"Exit Count\", CONDITION(COUNT(*), where usersession.bounce=true) as \"Bounce Count\", avg(duration) as \"Duration\" FROM useraction where ${milestoneGoal}",
-      "type": "TABLE",
-      "limit": 1000
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ]
     },
     {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
+      "name": "User breakdown",
+      "tileType": "USERS",
       "configured": true,
       "bounds": {
-        "top": 0,
-        "left": 988,
-        "width": 266,
+        "top": 38,
+        "left": 1026,
+        "width": 304,
         "height": 304
       },
       "tileFilter": {},
-      "customName": "Conversion Goals",
-      "query": "select distinct useraction.matchingConversionGoals as \"Conversion Goals\",count(*) as \"Count\" FROM useraction where useraction.matchingConversionGoals IS NOT NULL",
-      "type": "TABLE",
-      "limit": 1000
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ]
     },
     {
-      "name": "Errors by Type",
-      "tileType": "DATA_EXPLORER",
+      "name": "Bounce rate",
+      "tileType": "BOUNCE_RATE",
       "configured": true,
       "bounds": {
-        "top": 304,
-        "left": 912,
-        "width": 760,
-        "height": 228
+        "top": 38,
+        "left": 1330,
+        "width": 304,
+        "height": 304
       },
       "tileFilter": {},
-      "customName": "Data explorer results",
-      "queries": [
-        {
-          "id": "A",
-          "metric": "builtin:apps.web.countOfErrors",
-          "spaceAggregation": "SUM",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [
-            "Error type"
-          ],
-          "enabled": true
-        }
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ]
+    },
+    {
+      "name": "Top conversion goals",
+      "tileType": "UEM_CONVERSIONS_OVERALL",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 1634,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ]
+    },
+    {
+      "name": "Conversion goal",
+      "tileType": "UEM_CONVERSIONS_PER_GOAL",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 1634,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
       ],
-      "visualConfig": {
-        "type": "GRAPH_CHART",
-        "global": {
-          "theme": "DEFAULT",
-          "threshold": {
-            "axisTarget": "LEFT",
-            "columnId": "Error count (by user type, error type, error origin) [web]",
-            "rules": [
-              {
-                "color": "#7dc540"
-              },
-              {
-                "color": "#f5d30f"
-              },
-              {
-                "color": "#dc172a"
-              }
-            ]
-          },
-          "seriesType": "LINE"
-        },
-        "rules": [
-          {
-            "matcher": "A:",
-            "properties": {
-              "seriesType": "AREA"
-            }
-          }
-        ]
-      }
+      "metric": "8ab37f96-a815-4912-8b53-480b1cf2248a"
+    },
+    {
+      "name": "JavaScript errors",
+      "tileType": "UEM_JSERRORS_OVERALL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1634,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ]
+    },
+    {
+      "name": "Resources",
+      "tileType": "RESOURCES",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 418,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ],
+      "metric": "ACTION_COUNT"
+    },
+    {
+      "name": "Resources",
+      "tileType": "RESOURCES",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 114,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ],
+      "metric": "ACTION_DURATION"
+    },
+    {
+      "name": "Most used 3rd parties",
+      "tileType": "THIRD_PARTY_MOST_ACTIVE",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 722,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ],
+      "metric": "ACTION_COUNT"
+    },
+    {
+      "name": "Most used 3rd parties",
+      "tileType": "THIRD_PARTY_MOST_ACTIVE",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 1026,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ],
+      "metric": "CDN"
+    },
+    {
+      "name": "Most used 3rd parties",
+      "tileType": "THIRD_PARTY_MOST_ACTIVE",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 1330,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ],
+      "metric": "FIRST_PARTY"
+    },
+    {
+      "name": "Live user activity",
+      "tileType": "UEM_ACTIVE_SESSIONS",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 114,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Web application",
+      "tileType": "APPLICATION",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 418,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2"
+      ]
+    },
+    {
+      "name": "Key user action",
+      "tileType": "DEM_KEY_USER_ACTION",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 114,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2",
+        "APPLICATION_METHOD-0C8B2506C6E273B2"
+      ]
+    },
+    {
+      "name": "Key user action",
+      "tileType": "DEM_KEY_USER_ACTION",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 418,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2",
+        "APPLICATION_METHOD-80C9F471C5C41B15"
+      ]
+    },
+    {
+      "name": "Key user action",
+      "tileType": "DEM_KEY_USER_ACTION",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 722,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2",
+        "APPLICATION_METHOD-C21851E134C7B477"
+      ]
+    },
+    {
+      "name": "Key user action",
+      "tileType": "DEM_KEY_USER_ACTION",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 1026,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2",
+        "APPLICATION_METHOD-22588C5975221BCB"
+      ]
+    },
+    {
+      "name": "Key user action",
+      "tileType": "DEM_KEY_USER_ACTION",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 1330,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "assignedEntities": [
+        "APPLICATION-4ECA8C42196BA4A2",
+        "APPLICATION_METHOD-6279FE75FF75187C"
+      ]
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 114,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Application Overview\n!PU(menu):name=Application-VC;url=#dashboard;id=efcbab3e-edb5-44a1-a42c-b96a5ddccfa2\n!PU(menu):name=Application-Errors;url=#dashboard;id=7e2ffa59-d228-4074-8fa7-88dcbb678a3a"
     }
   ]
 }
