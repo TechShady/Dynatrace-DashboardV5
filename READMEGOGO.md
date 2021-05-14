@@ -1,3 +1,3 @@
 # GoGo InFlight Digital Business Analytic Dashboards
 
-![Digital Business Analytics](image/gogo.png)
+![Digital Business Analytics](gogo.png)
