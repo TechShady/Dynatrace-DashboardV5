@@ -681,7 +681,7 @@
         "height": 304
       },
       "tileFilter": {},
-      "customName": "!PU(menu):name=Payment Overview;url=#dashboard;id=bbbbbbbb-a003-a019-0001-000000000004 !PU(menu):name=Application Overview;url=#dashboard;id=bbbbbbbb-a003-a019-0002-000000000004  !PU(menu):name=${uspClause.value} App Overview;url=#dashboard;id=f82ab5d0-e026-4bbc-b5f7-832e8c350714 !PU(menu):name=Sankey;url=#dashboard;id=bbbbbbbb-a003-a019-0003-000000000004 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
+      "customName": "!PU(menu):name=PaymentOverview;url=#dashboard;id=bbbbbbbb-a003-a019-0001-000000000004 !PU(menu):name=ApplicationOverview;url=#dashboard;id=bbbbbbbb-a003-a019-0002-000000000004  !PU(menu):name=${uspClause.value}AppOverview;url=#dashboard;id=f82ab5d0-e026-4bbc-b5f7-832e8c350714 !PU(menu):name=Sankey;url=#dashboard;id=bbbbbbbb-a003-a019-0003-000000000004 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
