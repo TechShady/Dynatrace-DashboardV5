@@ -668,7 +668,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "##💎 Powerup Enabled Dashboard 💎\n\n##  [Install Chrome Extension](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)"
+      "markdown": "##\uD83D\uDC8E Powerup Enabled Dashboard \uD83D\uDC8E\n\n##  [Install Chrome Extension](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)"
     },
     {
       "name": "User Sessions Query",
@@ -685,7 +685,7 @@
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
-      "limit": 50
+      "limit": 1000
     }
   ]
 }

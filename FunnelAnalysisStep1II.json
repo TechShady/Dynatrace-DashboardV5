@@ -851,7 +851,7 @@
         "customName": "\uD83C\uDFD9 !PU(usqlcolor):colors=#4363d8,#FFCB05,#3cb44b,#f58231,#911eb4,#42d4f4,#f032e6,#bfef45,#fabed4,#469990,#e6beff,#9a6324,#fffac8,#800000,#aaffc3,#808000,#ffd8b1,#000075,#a9a9a9,#ffffff,#000000",
         "query": "select count(usersessionid) as \"Requests\",${split.usql} FROM usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and useraction.matchingConversionGoals=\"Activate\" and ${split.usql} is not null group by ${split.usql}",
         "type": "PIE_CHART",
-        "limit": 50
+        "limit": 1000
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
@@ -866,7 +866,7 @@
         "customName": "\uD83C\uDFD9 !PU(usqlcolor):colors=#4363d8,#FFCB05,#3cb44b,#f58231,#911eb4,#42d4f4,#f032e6,#bfef45,#fabed4,#469990,#e6beff,#9a6324,#fffac8,#800000,#aaffc3,#808000,#ffd8b1,#000075,#a9a9a9,#ffffff,#000000",
         "query": "select count(usersessionid) as \"Requests\",${split.usql} FROM usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and not useraction.matchingConversionGoals=\"Activate\" and ${split.usql} is not null group by ${split.usql}",
         "type": "PIE_CHART",
-        "limit": 50
+        "limit": 1000
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
@@ -881,7 +881,7 @@
         "customName": "\uD83C\uDFC6 !PU(usqlcolor):vals=satisfied,tolerated,frustrated;colors=#39ff14,#ffe11c,#FF1C1C",
         "query": "select count(usersessionid) as \"Requests\", userExperienceScore FROM usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and useraction.matchingConversionGoals=\"Activate\" group by userExperienceScore",
         "type": "PIE_CHART",
-        "limit": 50
+        "limit": 1000
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
@@ -896,7 +896,7 @@
         "customName": "\uD83C\uDFC6 !PU(usqlcolor):vals=satisfied,tolerated,frustrated;colors=#39ff14,#ffe11c,#FF1C1C",
         "query": "select count(usersessionid) as \"Requests\", userExperienceScore FROM usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and not useraction.matchingConversionGoals=\"Activate\" group by userExperienceScore",
         "type": "PIE_CHART",
-        "limit": 50
+        "limit": 1000
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
@@ -912,7 +912,7 @@
         "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and not useraction.matchingConversionGoals=\"Activate\"",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
-        "limit": 50
+        "limit": 1000
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
@@ -928,7 +928,7 @@
         "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and useraction.matchingConversionGoals=\"Activate\"",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
-        "limit": 50
+        "limit": 1000
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
@@ -944,7 +944,7 @@
         "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and useraction.matchingConversionGoals=\"Activate\"",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
-        "limit": 50
+        "limit": 1000
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
@@ -960,6 +960,6 @@
         "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application in (\"Gogo Inflight Production\")   ${uspClause}  and useraction.name=\"ifc/splash\" and not useraction.matchingConversionGoals=\"Activate\"",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic",
-        "limit": 50
+        "limit": 1000
     }]
 }

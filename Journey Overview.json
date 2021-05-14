@@ -7,7 +7,7 @@
   },
   "id": "78b1f7dd-1bd7-4a09-bedd-86c96c013ec9",
   "dashboardMetadata": {
-    "name": "💎 ${uspClause.value} Journey Overview",
+    "name": "\uD83D\uDC8E ${uspClause.value} Journey Overview",
     "shared": false,
     "owner": "john.kelly@dynatrace.com",
         "sharingDetails": {
@@ -38,7 +38,7 @@
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Funnel 2",
@@ -55,7 +55,7 @@
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"payment/create_account\") AS \"Create Account\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Funnel 3",
@@ -72,7 +72,7 @@
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Funnel 4",
@@ -89,7 +89,7 @@
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/checkout\") AS \"Payment Checkout\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Funnel 5",
@@ -106,7 +106,7 @@
       "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"payment/checkout\") AS \"Payment Checkout\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Funnel Entries",
@@ -125,7 +125,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": false
       },
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Markdown",

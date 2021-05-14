@@ -33,7 +33,7 @@
       "customName": "Payment Apdex",
       "query": "select distinct userExperienceScore,count(*) as \"Count\" FROM usersession where ${milestoneGoal} and stringProperties.paymenttype IS NOT NULL",
       "type": "PIE_CHART",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -49,7 +49,7 @@
       "customName": "Payment Browser",
       "query": "select distinct browserFamily,count(*) as \"Count\" FROM usersession where ${milestoneGoal} and browserFamily IS NOT NULL",
       "type": "PIE_CHART",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -65,7 +65,7 @@
       "customName": "Count by Payment Type",
       "query": "select distinct stringProperties.paymenttype as \"Payment Type\",CONDITION(COUNT(*), WHERE userExperienceScore=\"SATISFIED\") as \"Satisfied Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"TOLERATED\") as \"Tolerated Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"FRUSTRATED\") as \"Frustrated Count\",count(*) as \"Total Count\" FROM usersession where ${milestoneGoal} and stringProperties.paymenttype IS NOT NULL",
       "type": "TABLE",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -84,7 +84,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": true
       },
-      "limit": 50
+      "limit": 1000
     }
   ]
 }

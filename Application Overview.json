@@ -33,7 +33,7 @@
       "customName": "Count by Browser",
       "query": "select distinct top(usersession.browserMajorVersion,10),count(*) as \"Count\" FROM useraction where ${milestoneGoal}",
       "type": "PIE_CHART",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -49,7 +49,7 @@
       "customName": "Error Count by Browser",
       "query": "select distinct top(usersession.browserMajorVersion,10), CONDITION(count(*), WHERE errorCount>0) as \"Count\" FROM useraction where ${milestoneGoal}",
       "type": "PIE_CHART",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -68,7 +68,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": true
       },
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -87,7 +87,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": true
       },
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -103,7 +103,7 @@
       "customName": "Session Count",
       "query": "select count(*) as \" \" from usersession where ${milestoneGoal}",
       "type": "SINGLE_VALUE",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -119,7 +119,7 @@
       "customName": "Real User Count",
       "query": "select count(*) as \" \" from usersession where ${milestoneGoal} and userType=\"REAL_USER\"",
       "type": "SINGLE_VALUE",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -135,7 +135,7 @@
       "customName": "New User Count",
       "query": "select count(*) as \" \" from usersession where ${milestoneGoal} and newUser=true",
       "type": "SINGLE_VALUE",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -151,7 +151,7 @@
       "customName": "User Action Overview",
       "query": "select distinct useraction.name as \"User Action\", count(*) as \"Requests\", CONDITION(count(*), where useraction.isEntryAction=true) as \"Entry Count\", CONDITION(count(*), where useraction.isExitAction=true) as \"Exit Count\", CONDITION(COUNT(*), where usersession.bounce=true) as \"Bounce Count\", avg(duration) as \"Duration\" FROM useraction where ${milestoneGoal}",
       "type": "TABLE",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -167,7 +167,7 @@
       "customName": "Conversion Goals",
       "query": "select distinct useraction.matchingConversionGoals as \"Conversion Goals\",count(*) as \"Count\" FROM useraction where useraction.matchingConversionGoals IS NOT NULL",
       "type": "TABLE",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Errors by Type",

@@ -36,7 +36,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": false
       },
-      "limit": 50
+      "limit": 1000
     }
   ]
 }

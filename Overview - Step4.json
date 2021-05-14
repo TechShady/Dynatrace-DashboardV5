@@ -58,7 +58,7 @@
       "customName": "!PU(table):col=-6",
       "query": "Select userSessionId as \"Sessions\",duration/100 as \"Duration (s)\",${split.usql} as \"${split.id}\",useractioncount as \"Action Count\",numberOfRageClicks as \"Rage Cnt\",(duration / userActionCount) as \"Engagement Rate\", (numberOfRageClicks*100/useractioncount) as \"Rage Rate\", (totalErrorCount*100/useractioncount) as \"Error Rate\" FROM usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/sign_in\" ${uspClause} and ${uspClause.key} IS NOT NULL order by duration desc",
       "type": "TABLE",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -77,7 +77,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": true
       },
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Payment SignIn Visually Complete by ${split.id}",
@@ -117,7 +117,7 @@
       "customName": ".",
       "query": "select distinct top(${split.usql},10),CONDITION(count(${split.usql}), where ${uspClause.key} IS NOT NULL) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/sign_in\"  ${uspClause} and ${uspClause.key} IS NOT NULL ",
       "type": "PIE_CHART",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -136,7 +136,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": true
       },
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "User Sessions Query",
@@ -152,7 +152,7 @@
       "customName": ".",
       "query": "select distinct top(${split.usql},10),CONDITION(COUNT(*), where ${uspClause.key} IS NOT NULL and isExitAction=true) as \"Count\" FROM useraction where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/sign_in\"  ${uspClause} and ${uspClause.key} IS NOT NULL ",
       "type": "PIE_CHART",
-      "limit": 50
+      "limit": 1000
     },
     {
       "name": "Payment SignIn Exit Count by ${split.id}",
