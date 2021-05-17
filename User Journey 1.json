@@ -320,7 +320,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep2;full=false # Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-0C8B2506C6E273B2/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep2;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-0C8B2506C6E273B2/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "Step1 Abandon Rate",
@@ -333,7 +333,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(link):lnkstep1abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep1abandons,b:lnkstep1;base=low;warn=90;crit=95;full=false # Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-0C8B2506C6E273B2/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+      "markdown": "!PU(link):lnkstep1abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep1abandons,b:lnkstep1;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-0C8B2506C6E273B2/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "Step1 Exit Count",
@@ -346,7 +346,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1exits;full=false # Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-0C8B2506C6E273B2/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-0C8B2506C6E273B2/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "Step2 Abandons Count",
@@ -359,7 +359,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep2,b:lnkstep3;full=false # Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep2,b:lnkstep3;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
     },
     {
       "name": "Step2 Abandon Rate",
@@ -372,7 +372,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(link):lnkstep2abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false # Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "!PU(link):lnkstep2abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
     },
     {
       "name": "Step2 Exit Count",
@@ -385,7 +385,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2exits;full=false # Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
     },
     {
       "name": "StepLast Abandons Count",
@@ -398,7 +398,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep1;full=false # Abandons !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-80C9F471C5C41B15/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep1;full=false \n# Abandons !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-80C9F471C5C41B15/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "StepLast Abandon Rate",
@@ -411,7 +411,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(link):lnksteplastabandonrate !PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep1;full=false # Abandon Rate !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-80C9F471C5C41B15/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+      "markdown": "!PU(link):lnksteplastabandonrate !PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep1;full=false \n# Abandon Rate !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-80C9F471C5C41B15/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "StepLast Exit Count",
@@ -424,7 +424,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastexits;full=false # Site Exits !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-80C9F471C5C41B15/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastexits;full=false \n# Site Exits !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-80C9F471C5C41B15/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "Steps Timeseries Query",
@@ -656,19 +656,6 @@
       },
       "tileFilter": {},
       "markdown": "!PU(link):lnksessionrate !PU(math):exp=(a/b)*100;scope=a:lnkfunnelsessions,b:lnksessions;base=high;warn=5;crit=3;full=false"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 0,
-        "left": 0,
-        "width": 1254,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "##\uD83D\uDC8E Powerup Enabled Dashboard \uD83D\uDC8E\n\n##  [Install Chrome Extension](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)"
     },
     {
       "name": "User Sessions Query",
