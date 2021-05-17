@@ -5,7 +5,7 @@
     ],
     "clusterVersion": "1.215.107.20210414-181420"
   },
-  "id": "1f993e62-c4b7-4ba3-9b05-7f426362ed22",
+  "id": "3f993e62-c4b7-4ba3-9b05-7f426362ed22",
   "dashboardMetadata": {
     "name": "\uD83D\uDC8E ${uspClause.value} $0 Product User Journey",
     "shared": true,
@@ -112,7 +112,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "## Process Order !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "## Payment Sign In !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "Step2ForensicsIcon",
@@ -125,7 +125,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep2abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep2abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114"
     },
     {
       "name": "Step2WebPageIcon",
@@ -151,7 +151,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep2abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep2abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84"
     },
     {
       "name": "Step2OverviewIcon",
@@ -164,7 +164,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnkstep2abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "!PU(svg):icon=overview;link=lnkstep2abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "StepLastHeader",
@@ -243,7 +243,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(menu):name=PaymentOverview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2666 !PU(menu):name=ApplicationOverview;url=#dashboard;id=7e2ffa59-d228-4074-8fa7-88dcbb678a3b !PU(menu):name=${uspClause.value}AppOverview;url=#dashboard;id=f82ab5d0-e026-4bbc-b5f7-832e8c350714 !PU(menu):name=Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
-      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Sign In\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
       "limit": 1000
@@ -298,7 +298,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep2,b:lnkstep3;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep2,b:lnkstep3;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "Step2 Abandon Rate",
@@ -311,7 +311,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(link):lnkstep2abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "!PU(link):lnkstep2abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "Step2 Exit Count",
@@ -324,7 +324,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711112 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b82 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc92"
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION_METHOD-C21851E134C7B477/mda?analysisType=PAGES !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "StepLast Abandons Count",
@@ -377,7 +377,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c2a52da8-46a1-4b11-bc15-a3da2cd15319",
-      "query": "SELECT distinct datetime(endtime,\"M-d HH:mm\",\"4m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\"))) AS \"Process Order\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "query": "SELECT distinct datetime(endtime,\"M-d HH:mm\",\"4m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\"))) AS \"Payment Sign In\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": false
