@@ -5,16 +5,15 @@
     ],
     "clusterVersion": "1.217.123.20210517-133838"
   },
-  "id": "6f9b869c-3715-4c42-b2d3-3950e38f2666",
+  "id": "6f9b869c-3715-4c42-b2d3-3950e38f2667",
   "dashboardMetadata": {
-    "name": "${uspClause.value} Payment Overview",
+    "name": "Payment Overview",
     "shared": true,
     "owner": "john.kelly@dynatrace.com",
     "dashboardFilter": {
       "timeframe": "-24h to now"
     },
     "tags": [
-      "${uspClause.value}",
       "Overview"
     ]
   },
@@ -47,7 +46,7 @@
       },
       "tileFilter": {},
       "customName": "Payment Count !PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"1h\") as \"Start Time\", usersession.stringProperties.paymenttype,CONDITION(count(*), where usersession.stringProperties.paymenttype IS NOT NULL ${uspClause} and useraction.matchingConversionGoals=\"Activate\") as \"Count\" FROM usersession where usersession.stringProperties.paymenttype IS NOT NULL ${uspClause}",
+      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"1h\") as \"Start Time\", usersession.stringProperties.paymenttype,CONDITION(count(*), where usersession.stringProperties.paymenttype IS NOT NULL and useraction.matchingConversionGoals=\"Activate\") as \"Count\" FROM usersession where usersession.stringProperties.paymenttype IS NOT NULL",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": true
@@ -65,8 +64,8 @@
         "height": 380
       },
       "tileFilter": {},
-      "customName": "Payment by ${split.id}",
-      "query": "select distinct ${split.usql},count(*) as \"Count\" FROM usersession where useraction.matchingConversionGoals=\"Activate\" and stringProperties.paymenttype IS NOT NULL ${uspClause}",
+      "customName": "Payment by Airline",
+      "query": "select distinct usersession.stringProperties.airline,count(*) as \"Count\" FROM usersession where useraction.matchingConversionGoals=\"Activate\" and stringProperties.paymenttype IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -82,7 +81,7 @@
       },
       "tileFilter": {},
       "customName": "Payment by Browser",
-      "query": "select distinct browserFamily,count(*) as \"Count\" FROM usersession where useraction.matchingConversionGoals=\"Activate\" and stringProperties.paymenttype IS NOT NULL ${uspClause}",
+      "query": "select distinct browserFamily,count(*) as \"Count\" FROM usersession where useraction.matchingConversionGoals=\"Activate\" and stringProperties.paymenttype IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     }
