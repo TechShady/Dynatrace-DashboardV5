@@ -47,7 +47,7 @@
       },
       "tileFilter": {},
       "customName": "Payment Count !PU(usqlstack):colors=green,blue,#aabbcc",
-      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"1h\") as \"Start Time\", usersession.stringProperties.paymenttype,CONDITION(count(*), where usersession.stringProperties.paymenttype IS NOT NULL ${uspClause} and matchingConversionGoals=\"Activate\") as \"Count\" FROM useraction where usersession.stringProperties.paymenttype IS NOT NULL ${uspClause}",
+      "query": "select distinct DATETIME(starttime,\"yyy-MM-dd HH:mm\",\"1h\") as \"Start Time\", usersession.stringProperties.paymenttype,CONDITION(count(*), where usersession.stringProperties.paymenttype IS NOT NULL ${uspClause} and useraction.matchingConversionGoals=\"Activate\") as \"Count\" FROM usersession where usersession.stringProperties.paymenttype IS NOT NULL ${uspClause}",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": true
