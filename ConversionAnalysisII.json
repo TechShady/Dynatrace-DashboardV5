@@ -7,7 +7,7 @@
 	},
 	"id": "0d81ee7c-f7ba-4626-a086-60b76e222505",
 	"dashboardMetadata": {
-		"name": "${UserJourneyName} Conversion Analysis",
+		"name": "${uspClause.value} Conversion Analysis",
 		"shared": true,
 		"owner": "MyEmail",
 		"sharingDetails": {
@@ -18,7 +18,7 @@
 			"timeframe": "l_2_HOURS",
 			"managementZone": null
 		},
-    "tags": ["${UserJourneyName}", "${app.name}", "Analysis"]
+    "tags": ["${uspClause.value}", "Gogo Inflight Production", "Analysis"]
 
 	},
     "tiles": [{
@@ -33,7 +33,7 @@
         },
         "tileFilter": {},
         "customName": "!PU(color):base=high;warn=50;crit=25",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}  and userExperienceScore=\"SATISFIED\" and ${milestoneGoal} and ${conversionGoal} ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and userExperienceScore=\"SATISFIED\" and (useraction.matchingConversionGoals=\"Splash\") and not (useraction.matchingConversionGoals=\"Activate\")",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -48,7 +48,7 @@
         },
         "tileFilter": {},
         "customName": "!PU(color):base=high;warn=50;crit=25",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}  and userExperienceScore=\"TOLERATED\" and ${milestoneGoal} and ${conversionGoal} ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and userExperienceScore=\"TOLERATED\" and (useraction.matchingConversionGoals=\"Splash\") and not (useraction.matchingConversionGoals=\"Activate\")",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -63,7 +63,7 @@
         },
         "tileFilter": {},
         "customName": "!PU(color):base=high;warn=50;crit=25",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}  and userExperienceScore=\"FRUSTRATED\" and ${milestoneGoal} and ${conversionGoal} ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and userExperienceScore=\"FRUSTRATED\" and (useraction.matchingConversionGoals=\"Splash\") and not (useraction.matchingConversionGoals=\"Activate\")",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -77,7 +77,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Satisfied Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20and%20${conversionGoal}%20and%20${milestoneGoal}%20${uspClause}%0A&visualization=TABLE)"
+        "markdown": "## [Satisfied Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20and%20useraction.matchingConversionGoals=%22Splash%22%20and%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
@@ -89,7 +89,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Tolerated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20and%20${conversionGoal}%20and%20${milestoneGoal}%20${uspClause}%0A&visualization=TABLE)"
+        "markdown": "## [Tolerated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20and%20useraction.matchingConversionGoals=%22Splash%22%20and%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
@@ -101,7 +101,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Frustrated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20and%20${conversionGoal}%20and%20${milestoneGoal}%20${uspClause}%0A&visualization=TABLE)"
+        "markdown": "## [Frustrated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20and%20useraction.matchingConversionGoals=%22Splash%22%20and%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
     }, {
         "name": "Conversions Over Time",
         "tileType": "HEADER",
@@ -114,7 +114,7 @@
         },
         "tileFilter": {}
     }, {
-        "name": "Conversions by City",
+        "name": "Conversions by ${split.id}",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -136,7 +136,7 @@
         },
         "tileFilter": {},
         "customName": "!PU(color):base=high;warn=50;crit=25",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}  and ${milestoneGoal} and ${conversionGoal} ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and (useraction.matchingConversionGoals=\"Splash\") and not (useraction.matchingConversionGoals=\"Activate\")",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -150,7 +150,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Overall Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%20${conversionGoal}%20and%20${milestoneGoal}%20${uspClause}%0A&visualization=TABLE)"
+        "markdown": "## [Overall Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%20useraction.matchingConversionGoals=%22Splash%22%20and%20useraction.matchingConversionGoals=%22Activate%22%20${uspClause}%0A&visualization=TABLE)"
     }, {
         "name": " ",
         "tileType": "DTAQL",
@@ -163,7 +163,7 @@
         },
         "tileFilter": {},
         "customName": "!PU(usqlstack):vals=SATISFIED,TOLERATED,FRUSTRATED;colors=green,yellow,red",
-        "query": "select distinct datetime(endtime,\"HH:mm\",\"10m\"), count(*) as \"Conversions\", userExperienceScore from usersession where useraction.application in (\"${app.name}\") and ${milestoneGoal} and ${conversionGoal} ",
+        "query": "select distinct datetime(endtime,\"HH:mm\",\"10m\"), count(*) as \"Conversions\", userExperienceScore from usersession where useraction.application in (\"Gogo Inflight Production\") and (useraction.matchingConversionGoals=\"Splash\") and not (useraction.matchingConversionGoals=\"Activate\")",
         "type": "COLUMN_CHART",
         "visualizationConfig": {
             "hasAxisBucketing": false
@@ -192,7 +192,7 @@
         },
         "tileFilter": {},
         "customName": "!PU(usqlcolor):colors=#4363d8,#FFCB05,#3cb44b,#f58231,#911eb4,#42d4f4,#f032e6,#bfef45,#fabed4,#469990,#e6beff,#9a6324,#fffac8,#800000,#aaffc3,#808000,#ffd8b1,#000075,#a9a9a9,#ffffff,#000000",
-        "query": "SELECT browserFamily, count(userSessionId) FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}  and ${milestoneGoal} and ${conversionGoal}  group by browserFamily order by count(userSessionId) desc",
+        "query": "SELECT browserFamily, count(userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and (useraction.matchingConversionGoals=\"Splash\") and not (useraction.matchingConversionGoals=\"Activate\") group by browserFamily order by count(userSessionId) desc",
         "type": "PIE_CHART",
         "limit": 1000
     }, {
@@ -207,7 +207,7 @@
         },
         "tileFilter": {},
         "customName": "!PU(usqlcolor):colors=#4363d8,#FFCB05,#3cb44b,#f58231,#911eb4,#42d4f4,#f032e6,#bfef45,#fabed4,#469990,#e6beff,#9a6324,#fffac8,#800000,#aaffc3,#808000,#ffd8b1,#000075,#a9a9a9,#ffffff,#000000",
-        "query": "SELECT City, count(userSessionId) FROM usersession where useraction.application in (\"${app.name}\") ${uspClause}  and ${milestoneGoal} and ${conversionGoal}  group by City order by count(userSessionId) desc",
+        "query": "SELECT ${split.id}, count(userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\") ${uspClause}  and (useraction.matchingConversionGoals=\"Splash\") and not (useraction.matchingConversionGoals=\"Activate\") group by ${split.id} order by count(userSessionId) desc",
         "type": "PIE_CHART",
         "limit": 1000
     }]
