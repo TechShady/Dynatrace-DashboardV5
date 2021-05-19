@@ -30,7 +30,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Payment Type !PU(table):",
-      "query": "select distinct stringProperties.paymenttype as \"Payment Type\",CONDITION(COUNT(*), WHERE userExperienceScore=\"SATISFIED\" and useraction.matchingConversionGoals=\"Activate\") as \"Satisfied Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"TOLERATED\" and useraction.matchingConversionGoals=\"Activate\") as \"Tolerated Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"FRUSTRATED\" and useraction.matchingConversionGoals=\"Activate\") as \"Frustrated Count\",count(*) as \"Total Count\" FROM usersession where useraction.matchingConversionGoals=\"Activate\" and stringProperties.paymenttype IS NOT NULL ${uspClause}",
+      "query": "select distinct stringProperties.paymenttype as \"Payment Type\",CONDITION(COUNT(*), WHERE userExperienceScore=\"SATISFIED\" and useraction.matchingConversionGoals=\"Activate\") as \"Satisfied Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"TOLERATED\" and useraction.matchingConversionGoals=\"Activate\") as \"Tolerated Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"FRUSTRATED\" and useraction.matchingConversionGoals=\"Activate\") as \"Frustrated Count\",count(*) as \"Total Count\" FROM usersession where useraction.matchingConversionGoals=\"Activate\" and stringProperties.paymenttype IS NOT NULL",
       "type": "TABLE",
       "limit": 50
     },
