@@ -26,11 +26,11 @@
       "bounds": {
         "top": 0,
         "left": 532,
-        "width": 874,
+        "width": 608,
         "height": 380
       },
       "tileFilter": {},
-      "customName": "Count by Payment Type",
+      "customName": "Count by Payment Type !PU(table):",
       "query": "select distinct stringProperties.paymenttype as \"Payment Type\",CONDITION(COUNT(*), WHERE userExperienceScore=\"SATISFIED\" and useraction.matchingConversionGoals=\"Activate\") as \"Satisfied Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"TOLERATED\" and useraction.matchingConversionGoals=\"Activate\") as \"Tolerated Count\",CONDITION(COUNT(*), WHERE userExperienceScore=\"FRUSTRATED\" and useraction.matchingConversionGoals=\"Activate\") as \"Frustrated Count\",count(*) as \"Total Count\" FROM usersession where useraction.matchingConversionGoals=\"Activate\" and stringProperties.paymenttype IS NOT NULL ${uspClause}",
       "type": "TABLE",
       "limit": 50
@@ -42,8 +42,8 @@
       "bounds": {
         "top": 380,
         "left": 0,
-        "width": 1938,
-        "height": 608
+        "width": 1672,
+        "height": 456
       },
       "tileFilter": {},
       "customName": "Payment Count !PU(usqlstack):colors=green,blue,#aabbcc",
@@ -76,7 +76,7 @@
       "configured": true,
       "bounds": {
         "top": 0,
-        "left": 1406,
+        "left": 1140,
         "width": 532,
         "height": 380
       },
