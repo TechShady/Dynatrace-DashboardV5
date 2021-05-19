@@ -376,7 +376,7 @@
         "height": 418
       },
       "tileFilter": {},
-      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c2a52da8-46a1-4b11-bc15-a3da2cd15319",
+      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c2a52da8-46a1-4b11-bc15-a3da2cd15319 !PU(menu):name=ErrorTrend-24hrs;url=#dashboard;id=a72aebfc-4494-41cc-a129-28967a508333 !PU(menu):name=DurationTrend-24hrs;url=#dashboard;id=a72aebfc-4494-41cc-a129-28967a508334 !PU(menu):name=PurchaseTrend-24hrs;url=#dashboard;id=a72aebfc-4494-41cc-a129-28967a508335",
       "query": "SELECT distinct datetime(endtime,\"M-d HH:mm\",\"4m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\"))) AS \"Process Order\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
       "type": "LINE_CHART",
       "visualizationConfig": {
