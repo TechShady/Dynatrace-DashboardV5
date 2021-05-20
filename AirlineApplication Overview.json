@@ -5,16 +5,15 @@
     ],
     "clusterVersion": "1.217.123.20210517-133838"
   },
-  "id": "1813b247-161e-4909-aeac-d1ce40f60eb2",
+  "id": "1813b247-161e-4909-aeac-d1ce40f60eb3",
   "dashboardMetadata": {
-    "name": "${uspClause.value} Application Overview",
+    "name": "$Application Overview",
     "shared": true,
     "owner": "john.kelly@dynatrace.com",
     "dashboardFilter": {
       "timeframe": "-24h to now"
     },
     "tags": [
-      "${uspClause.value}",
       "Overview"
     ]
   },
@@ -31,7 +30,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Browser",
-      "query": "select distinct top(browserMajorVersion,10),count(*) as \"Count\" FROM usersession where browserMajorVersion is not null ${uspClause}",
+      "query": "select distinct top(browserMajorVersion,10),count(*) as \"Count\" FROM usersession where browserMajorVersion is not null",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -47,7 +46,7 @@
       },
       "tileFilter": {},
       "customName": "User Action Overview !PU(table):",
-      "query": "select distinct useraction.name as \"User Action\", count(*) as \"Requests\", CONDITION(count(*), where useraction.isEntryAction=true) as \"Entry Count\", CONDITION(count(*), where useraction.isExitAction=true) as \"Exit Count\", CONDITION(COUNT(*), where usersession.bounce=true) as \"Bounce Count\", avg(duration) as \"Duration\" FROM useraction where name is not null ${uspClause}",
+      "query": "select distinct useraction.name as \"User Action\", count(*) as \"Requests\", CONDITION(count(*), where useraction.isEntryAction=true) as \"Entry Count\", CONDITION(count(*), where useraction.isExitAction=true) as \"Exit Count\", CONDITION(COUNT(*), where usersession.bounce=true) as \"Bounce Count\", avg(duration) as \"Duration\" FROM useraction where name is not null",
       "type": "TABLE",
       "limit": 50
     },
@@ -63,7 +62,7 @@
       },
       "tileFilter": {},
       "customName": "Conversion Goals",
-      "query": "select distinct useraction.matchingConversionGoals as \"Conversion Goals\",count(*) as \"Count\" FROM useraction where useraction.matchingConversionGoals IS NOT NULL ${uspClause}",
+      "query": "select distinct useraction.matchingConversionGoals as \"Conversion Goals\",count(*) as \"Count\" FROM useraction where useraction.matchingConversionGoals IS NOT NULL",
       "type": "TABLE",
       "limit": 50
     },
@@ -79,7 +78,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Connectivity Type",
-      "query": "select distinct top(stringproperties.connectivitytype,10),count(*) as \"Count\" FROM usersession where stringproperties.connectivitytype is not null ${uspClause}",
+      "query": "select distinct top(stringproperties.connectivitytype,10),count(*) as \"Count\" FROM usersession where stringproperties.connectivitytype is not null",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -95,7 +94,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Is Guest Purchase",
-      "query": "select distinct top(stringProperties.isguestpurchase,10),count(*) as \"Count\" FROM usersession where stringProperties.isguestpurchase is not null ${uspClause}",
+      "query": "select distinct top(stringProperties.isguestpurchase,10),count(*) as \"Count\" FROM usersession where stringProperties.isguestpurchase is not null",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -111,7 +110,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Payment Type",
-      "query": "select distinct top(stringProperties.paymenttype,10),count(*) as \"Count\" FROM usersession where stringProperties.paymenttype is not null ${uspClause}",
+      "query": "select distinct top(stringProperties.paymenttype,10),count(*) as \"Count\" FROM usersession where stringProperties.paymenttype is not null",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -127,7 +126,7 @@
       },
       "tileFilter": {},
       "customName": "Count by Product Purchased",
-      "query": "select distinct top(stringProperties.productpurchased,10),count(*) as \"Count\" FROM usersession where stringProperties.productpurchased is not null ${uspClause}",
+      "query": "select distinct top(stringProperties.productpurchased,10),count(*) as \"Count\" FROM usersession where stringProperties.productpurchased is not null",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -143,7 +142,7 @@
       },
       "tileFilter": {},
       "customName": "Session Count",
-      "query": "select count(*) as \" \" from usersession where userSessionId is not null ${uspClause}",
+      "query": "select count(*) as \" \" from usersession where userSessionId is not null",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -159,7 +158,7 @@
       },
       "tileFilter": {},
       "customName": "Real User Count",
-      "query": "select count(*) as \" \" from usersession where userType=\"REAL_USER\" ${uspClause}",
+      "query": "select count(*) as \" \" from usersession where userType=\"REAL_USER\"",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -175,7 +174,7 @@
       },
       "tileFilter": {},
       "customName": "New User Count",
-      "query": "select count(*) as \" \" from usersession where newUser=true ${uspClause}",
+      "query": "select count(*) as \" \" from usersession where newUser=true",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -191,7 +190,7 @@
       },
       "tileFilter": {},
       "customName": "Bounce Count",
-      "query": "select count(*) as \" \" from usersession where userActionCount=1 ${uspClause}",
+      "query": "select count(*) as \" \" from usersession where userActionCount=1",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -207,7 +206,7 @@
       },
       "tileFilter": {},
       "customName": "Error Count",
-      "query": "select sum(totalErrorCount) as \" \" from usersession where userSessionId is not null ${uspClause}",
+      "query": "select sum(totalErrorCount) as \" \" from usersession where userSessionId is not null",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -223,7 +222,7 @@
       },
       "tileFilter": {},
       "customName": "Avg Action Duration",
-      "query": "select avg(useraction.duration) as \" \" from usersession where userSessionId IS NOT NULL ${uspClause}",
+      "query": "select avg(useraction.duration) as \" \" from usersession where userSessionId IS NOT NULL",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -239,7 +238,7 @@
       },
       "tileFilter": {},
       "customName": "Avg SessionDuration",
-      "query": "select avg(usersession.duration) as \" \" from usersession where userSessionId IS NOT NULL ${uspClause}",
+      "query": "select avg(usersession.duration) as \" \" from usersession where userSessionId IS NOT NULL",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -255,7 +254,7 @@
       },
       "tileFilter": {},
       "customName": "Avg Action Visually Complete",
-      "query": "select avg(useraction.visuallyCompleteTime) as \" \" from usersession where userSessionId IS NOT NULL ${uspClause}",
+      "query": "select avg(useraction.visuallyCompleteTime) as \" \" from usersession where userSessionId IS NOT NULL",
       "type": "SINGLE_VALUE",
       "limit": 50
     },
@@ -270,8 +269,8 @@
         "height": 418
       },
       "tileFilter": {},
-      "customName": "Visually Complete by ${split.id}",
-      "query": "select distinct top(${split.usql},10),avg(visuallyCompleteTime) as \"Visually Complete\" FROM useraction where ${split.usql} IS NOT NULL ${uspClause}",
+      "customName": "Visually Complete by Airline",
+      "query": "select distinct top(usersession.stringProperties.airline,10),avg(visuallyCompleteTime) as \"Visually Complete\" FROM useraction where usersession.stringProperties.airline IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -286,8 +285,8 @@
         "height": 418
       },
       "tileFilter": {},
-      "customName": "Duration by ${split.id}",
-      "query": "select distinct top(${split.usql},10),avg(duration) as \"Duration\" FROM useraction where ${split.usql} IS NOT NULL ${uspClause}",
+      "customName": "Duration by Airline",
+      "query": "select distinct top(usersession.stringProperties.airline,10),avg(duration) as \"Duration\" FROM useraction where usersession.stringProperties.airline IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -302,8 +301,8 @@
         "height": 418
       },
       "tileFilter": {},
-      "customName": "Error Count by ${split.id}",
-      "query": "select distinct top(${split.usql},10),count(usersession.totalErrorCount) as \"Count\" FROM useraction where ${split.usql} IS NOT NULL ${uspClause}",
+      "customName": "Error Count by Airline",
+      "query": "select distinct top(usersession.stringProperties.airline,10),count(usersession.totalErrorCount) as \"Count\" FROM useraction where usersession.stringProperties.airline IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     },
@@ -318,8 +317,8 @@
         "height": 418
       },
       "tileFilter": {},
-      "customName": "Count by ${split.id}",
-      "query": "select distinct top(${split.usql},10),count(*) as \"Count\" FROM useraction where ${split.usql} IS NOT NULL ${uspClause}",
+      "customName": "Count by Airline",
+      "query": "select distinct top(usersession.stringProperties.airline,10),count(*) as \"Count\" FROM useraction where usersession.stringProperties.airline IS NOT NULL",
       "type": "PIE_CHART",
       "limit": 50
     }
