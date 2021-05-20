@@ -5,7 +5,7 @@
     ],
     "clusterVersion": "1.217.123.20210517-133838"
   },
-  "id": "f577935b-421b-4370-a8a8-f376f88a8b05",
+  "id": "61e7ae4b-5c65-44da-9270-0997cd39f1ec",
   "dashboardMetadata": {
     "name": "${uspClause.value} Trends - 24hrs",
     "shared": false,
@@ -307,52 +307,6 @@
       "tileType": "DTAQL",
       "configured": true,
       "bounds": {
-        "top": 0,
-        "left": 0,
-        "width": 1710,
-        "height": 646
-      },
-      "tileFilter": {
-        "timeframe": "-8d"
-      },
-      "customName": "${uspClause.value} Avg Duration",
-      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\")) as \"Today\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\")) as \"1 Day Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\")) as \"2 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\")) as \"3 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\")) as \"4 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\")) as \"5 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\")) as \"6 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\")) as \"7 Days Before\" \nFROM usersession where stringProperties.airline=\"${uspClause.value}\"",
-      "type": "LINE_CHART",
-      "visualizationConfig": {
-        "hasAxisBucketing": false
-      },
-      "limit": 1000
-    },
-    {
-      "name": "Avg Duration",
-      "tileType": "HEADER",
-      "configured": true,
-      "bounds": {
-        "top": 0,
-        "left": 1710,
-        "width": 304,
-        "height": 38
-      },
-      "tileFilter": {}
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 38,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk1;full=false;size=24px\n## Today"
-    },
-    {
-      "name": "User Sessions Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
         "top": 2394,
         "left": 0,
         "width": 152,
@@ -365,99 +319,6 @@
       "query": "select avg(useraction.duration) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 114,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk2;full=false;size=24px\n## 1 Day Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 190,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk3;full=false;size=24px\n## 2 Days Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 266,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk4;full=false;size=24px\n## 3 Days Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 342,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk5;full=false;size=24px\n## 4 Days Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 418,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk6;full=false;size=24px\n## 5 Days Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 494,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk7;full=false;size=24px\n## 6 Days Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 570,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {
-        "timeframe": "Last 2 hours"
-      },
-      "markdown": "!PU(math):exp=(a);scope=a:dlnk8;full=false;size=24px\n## 7 Days Before"
     },
     {
       "name": "User Sessions Query",
@@ -730,23 +591,50 @@
       "limit": 1000
     },
     {
-      "name": "Purchases",
-      "tileType": "HEADER",
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
       "configured": true,
       "bounds": {
-        "top": 1292,
+        "top": 38,
         "left": 1710,
         "width": 304,
-        "height": 38
+        "height": 76
       },
-      "tileFilter": {}
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk1;full=false;size=24px\n## Today"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk3;full=false;size=24px\n## 2 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 266,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk4;full=false;size=24px\n## 3 Days Before"
     },
     {
       "name": "User Sessions Query",
       "tileType": "DTAQL",
       "configured": true,
       "bounds": {
-        "top": 1292,
+        "top": 0,
         "left": 0,
         "width": 1710,
         "height": 646
@@ -767,20 +655,7 @@
       "tileType": "MARKDOWN",
       "configured": true,
       "bounds": {
-        "top": 1330,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:plnk1;full=false;size=24px\n## Today"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 1406,
+        "top": 114,
         "left": 1710,
         "width": 304,
         "height": 76
@@ -793,33 +668,7 @@
       "tileType": "MARKDOWN",
       "configured": true,
       "bounds": {
-        "top": 1482,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:plnk3;full=false;size=24px\n## 2 Days Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 1558,
-        "left": 1710,
-        "width": 304,
-        "height": 76
-      },
-      "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:plnk4;full=false;size=24px\n## 3 Days Before"
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 1634,
+        "top": 342,
         "left": 1710,
         "width": 304,
         "height": 76
@@ -832,20 +681,20 @@
       "tileType": "MARKDOWN",
       "configured": true,
       "bounds": {
-        "top": 1710,
+        "top": 494,
         "left": 1710,
         "width": 304,
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:plnk6;full=false;size=24px\n## 5 Days Before"
+      "markdown": "!PU(math):exp=(a);scope=a:plnk7;full=false;size=24px\n## 6 Days Before"
     },
     {
       "name": "Markdown",
       "tileType": "MARKDOWN",
       "configured": true,
       "bounds": {
-        "top": 1862,
+        "top": 570,
         "left": 1710,
         "width": 304,
         "height": 76
@@ -860,13 +709,164 @@
       "tileType": "MARKDOWN",
       "configured": true,
       "bounds": {
+        "top": 418,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk6;full=false;size=24px\n## 5 Days Before"
+    },
+    {
+      "name": "Avg Duration",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1292,
+        "left": 1710,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1710,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk6;full=false;size=24px\n## 5 Days Before"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1292,
+        "left": 0,
+        "width": 1710,
+        "height": 646
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "${uspClause.value} Avg Duration",
+      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\")) as \"Today\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\")) as \"1 Day Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\")) as \"2 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\")) as \"3 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\")) as \"4 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\")) as \"5 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\")) as \"6 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\")) as \"7 Days Before\" \nFROM usersession where stringProperties.airline=\"${uspClause.value}\"",
+      "type": "LINE_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      },
+      "limit": 1000
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1330,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk1;full=false;size=24px\n## Today"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1406,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk2;full=false;size=24px\n## 1 Day Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1482,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk3;full=false;size=24px\n## 2 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1558,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk4;full=false;size=24px\n## 3 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1634,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk5;full=false;size=24px\n## 4 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1862,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {
+        "timeframe": "Last 2 hours"
+      },
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk8;full=false;size=24px\n## 7 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
         "top": 1786,
         "left": 1710,
         "width": 304,
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:plnk7;full=false;size=24px\n## 6 Days Before"
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk7;full=false;size=24px\n## 6 Days Before"
+    },
+    {
+      "name": "Purchase Counts",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1710,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {}
     }
   ]
 }
