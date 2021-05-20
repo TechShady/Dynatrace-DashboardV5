@@ -5,16 +5,15 @@
     ],
     "clusterVersion": "1.217.123.20210517-133838"
   },
-  "id": "f577935b-421b-4370-a8a8-f376f88a8b05",
+  "id": "f577935b-421b-4370-a8a8-f376f88a8b06",
   "dashboardMetadata": {
-    "name": "${uspClause.value} Trends - 24hrs",
+    "name": "Airline Trends - 24hrs",
     "shared": false,
     "owner": "john.kelly@dynatrace.com",
     "dashboardFilter": {
       "timeframe": "l_2_HOURS"
     },
     "tags": [
-      "${uspClause.value}",
       "Overview"
     ]
   },
@@ -33,7 +32,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk1",
-      "query": "select count(useraction.requesterrorCount) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -51,7 +50,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk2",
-      "query": "select count(useraction.requesterrorCount) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -69,7 +68,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk3",
-      "query": "select count(useraction.requesterrorCount) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -87,7 +86,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk4",
-      "query": "select count(useraction.requesterrorCount) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -105,7 +104,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk5",
-      "query": "select count(useraction.requesterrorCount) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -123,7 +122,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk6",
-      "query": "select count(useraction.requesterrorCount) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -141,7 +140,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk7",
-      "query": "select count(useraction.requesterrorCount) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -159,7 +158,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):elnk8",
-      "query": "select count(useraction.requesterrorCount) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(useraction.requesterrorCount) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -188,8 +187,8 @@
       "tileFilter": {
         "timeframe": "-8d"
       },
-      "customName": "${uspClause.value} Error Count",
-      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\")) as \"Today\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\")) as \"1 Day Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\")) as \"2 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\")) as \"3 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\")) as \"4 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\")) as \"5 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\")) as \"6 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\")) as \"7 Days Before\" \nFROM usersession where stringProperties.airline=\"${uspClause.value}\"",
+      "customName": "Error Count",
+      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\")) as \"Today\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\")) as \"1 Day Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\")) as \"2 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\")) as \"3 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\")) as \"4 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\")) as \"5 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\")) as \"6 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\")) as \"7 Days Before\" \nFROM usersession",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": false
@@ -316,7 +315,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk1",
-      "query": "select avg(useraction.duration) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -334,7 +333,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk2",
-      "query": "select avg(useraction.duration) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -352,7 +351,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk3",
-      "query": "select avg(useraction.duration) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -370,7 +369,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk4",
-      "query": "select avg(useraction.duration) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -388,7 +387,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk5",
-      "query": "select avg(useraction.duration) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -406,7 +405,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk6",
-      "query": "select avg(useraction.duration) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -424,7 +423,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk7",
-      "query": "select avg(useraction.duration) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -442,7 +441,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):dlnk8",
-      "query": "select avg(useraction.duration) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select avg(useraction.duration) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") ",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -460,7 +459,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk1",
-      "query": "select count(*) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -478,7 +477,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk2",
-      "query": "select count(*) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -496,7 +495,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk3",
-      "query": "select count(*) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -514,7 +513,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk4",
-      "query": "select count(*) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -532,7 +531,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk5",
-      "query": "select count(*) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -550,7 +549,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk6",
-      "query": "select count(*) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -568,7 +567,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk7",
-      "query": "select count(*) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -586,7 +585,7 @@
         "timeframe": "-8d"
       },
       "customName": "!PU(link):plnk8",
-      "query": "select count(*) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "query": "select count(*) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\")  and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
       "limit": 1000
     },
@@ -642,8 +641,8 @@
       "tileFilter": {
         "timeframe": "-8d"
       },
-      "customName": "${uspClause.value} Purchase Trends",
-      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",CONDITION(count(*),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and useraction.name=\"activate\") as \"Today\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and useraction.name=\"activate\") as \"1 Day Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and useraction.name=\"activate\") as \"2 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and useraction.name=\"activate\") as \"3 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and useraction.name=\"activate\") as \"4 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and useraction.name=\"activate\") as \"5 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and useraction.name=\"activate\") as \"6 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and useraction.name=\"activate\") as \"7 Days Before\" FROM usersession where stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "customName": "Purchase Trends",
+      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",CONDITION(count(*),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and useraction.name=\"activate\") as \"Today\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and useraction.name=\"activate\") as \"1 Day Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and useraction.name=\"activate\") as \"2 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and useraction.name=\"activate\") as \"3 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and useraction.name=\"activate\") as \"4 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and useraction.name=\"activate\") as \"5 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and useraction.name=\"activate\") as \"6 Days Before\",CONDITION(count(*),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and useraction.name=\"activate\") as \"7 Days Before\" FROM usersession where useraction.name=\"activate\"",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": false
@@ -755,8 +754,8 @@
       "tileFilter": {
         "timeframe": "-8d"
       },
-      "customName": "${uspClause.value} Avg Duration",
-      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\")) as \"Today\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\")) as \"1 Day Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\")) as \"2 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\")) as \"3 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\")) as \"4 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\")) as \"5 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\")) as \"6 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\")) as \"7 Days Before\" \nFROM usersession where stringProperties.airline=\"${uspClause.value}\"",
+      "customName": "Avg Duration",
+      "query": "select distinct DATETIME(starttime,\"HH\",\"1h\") as \"Start Time\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\")) as \"Today\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\")) as \"1 Day Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\")) as \"2 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\")) as \"3 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\")) as \"4 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\")) as \"5 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\")) as \"6 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\")) as \"7 Days Before\" \nFROM usersession",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": false
