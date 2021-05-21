@@ -35,7 +35,7 @@
       "customName": "!PU(link):elnk1",
       "query": "select count(useraction.requesterrorCount) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -53,7 +53,7 @@
       "customName": "!PU(link):elnk2",
       "query": "select count(useraction.requesterrorCount) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -71,7 +71,7 @@
       "customName": "!PU(link):elnk3",
       "query": "select count(useraction.requesterrorCount) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -89,7 +89,7 @@
       "customName": "!PU(link):elnk4",
       "query": "select count(useraction.requesterrorCount) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -107,7 +107,7 @@
       "customName": "!PU(link):elnk5",
       "query": "select count(useraction.requesterrorCount) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -125,7 +125,7 @@
       "customName": "!PU(link):elnk6",
       "query": "select count(useraction.requesterrorCount) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -143,7 +143,7 @@
       "customName": "!PU(link):elnk7",
       "query": "select count(useraction.requesterrorCount) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -161,7 +161,7 @@
       "customName": "!PU(link):elnk8",
       "query": "select count(useraction.requesterrorCount) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "Error Counts",
@@ -194,7 +194,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": false
       },
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "Markdown",
@@ -318,7 +318,7 @@
       "customName": "!PU(link):dlnk1",
       "query": "select avg(useraction.duration) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -336,7 +336,7 @@
       "customName": "!PU(link):dlnk2",
       "query": "select avg(useraction.duration) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -354,7 +354,7 @@
       "customName": "!PU(link):dlnk3",
       "query": "select avg(useraction.duration) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -372,7 +372,7 @@
       "customName": "!PU(link):dlnk4",
       "query": "select avg(useraction.duration) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -390,7 +390,7 @@
       "customName": "!PU(link):dlnk5",
       "query": "select avg(useraction.duration) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -408,7 +408,7 @@
       "customName": "!PU(link):dlnk6",
       "query": "select avg(useraction.duration) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -426,7 +426,7 @@
       "customName": "!PU(link):dlnk7",
       "query": "select avg(useraction.duration) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -444,7 +444,7 @@
       "customName": "!PU(link):dlnk8",
       "query": "select avg(useraction.duration) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and  stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -462,7 +462,7 @@
       "customName": "!PU(link):plnk1",
       "query": "select count(*) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"1d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -480,7 +480,7 @@
       "customName": "!PU(link):plnk2",
       "query": "select count(*) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"2d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -498,7 +498,7 @@
       "customName": "!PU(link):plnk3",
       "query": "select count(*) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"3d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -516,7 +516,7 @@
       "customName": "!PU(link):plnk4",
       "query": "select count(*) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"4d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -534,7 +534,7 @@
       "customName": "!PU(link):plnk5",
       "query": "select count(*) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"5d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -552,7 +552,7 @@
       "customName": "!PU(link):plnk6",
       "query": "select count(*) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"6d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -570,7 +570,7 @@
       "customName": "!PU(link):plnk7",
       "query": "select count(*) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"7d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "User Sessions Query",
@@ -588,7 +588,7 @@
       "customName": "!PU(link):plnk8",
       "query": "select count(*) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"8d\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
       "type": "SINGLE_VALUE",
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "Markdown",
@@ -648,7 +648,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": false
       },
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "Markdown",
@@ -761,7 +761,7 @@
       "visualizationConfig": {
         "hasAxisBucketing": false
       },
-      "limit": 1000
+      "limit": 50
     },
     {
       "name": "Markdown",
