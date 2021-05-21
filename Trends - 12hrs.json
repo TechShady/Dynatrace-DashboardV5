@@ -1,0 +1,872 @@
+ {
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.217.123.20210517-133838"
+  },
+  "id": "f577935b-421b-4370-a8a8-f376f88a5b05",
+  "dashboardMetadata": {
+    "name": "${uspClause.value} Trends - 12hrs",
+    "shared": false,
+    "owner": "john.kelly@dynatrace.com",
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS"
+    },
+    "tags": [
+      "${uspClause.value}",
+      "Overview"
+    ]
+  },
+  "tiles": [
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk1",
+      "query": "select count(useraction.requesterrorCount) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 152,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk2",
+      "query": "select count(useraction.requesterrorCount) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"1d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 304,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk3",
+      "query": "select count(useraction.requesterrorCount) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"2d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 456,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk4",
+      "query": "select count(useraction.requesterrorCount) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"3d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 608,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk5",
+      "query": "select count(useraction.requesterrorCount) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"4d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 760,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk6",
+      "query": "select count(useraction.requesterrorCount) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"5d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 912,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk7",
+      "query": "select count(useraction.requesterrorCount) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"6d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2698,
+        "left": 1064,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):elnk8",
+      "query": "select count(useraction.requesterrorCount) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"7d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "Error Counts",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 1710,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:elnk1;full=false;size=24px\n## Today"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:elnk4;full=false;size=24px\n## 3 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1140,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:elnk7;full=false;size=24px\n## 6 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:elnk3;full=false;size=24px\n## 2 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:elnk6;full=false;size=24px\n## 5 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:elnk2;full=false;size=24px\n## 1 Day Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 988,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:elnk5;full=false;size=24px\n## 4 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1216,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {
+        "timeframe": "Last 2 hours"
+      },
+      "markdown": "!PU(math):exp=(a);scope=a:elnk8;full=false;size=24px\n## 7 Days Before"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk1",
+      "query": "select avg(useraction.duration) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 152,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk2",
+      "query": "select avg(useraction.duration) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"1d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 304,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk3",
+      "query": "select avg(useraction.duration) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"2d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 456,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk4",
+      "query": "select avg(useraction.duration) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"3d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 608,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk5",
+      "query": "select avg(useraction.duration) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"4d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 760,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk6",
+      "query": "select avg(useraction.duration) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"5d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 912,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk7",
+      "query": "select avg(useraction.duration) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"6d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2394,
+        "left": 1064,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):dlnk8",
+      "query": "select avg(useraction.duration) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"7d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 0,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk1",
+      "query": "select count(*) as \"Today\" from usersession  where starttime < $NOW and starttime > $NOW-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 152,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk2",
+      "query": "select count(*) as \"1 Day Before\" from usersession  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"1d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 304,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk3",
+      "query": "select count(*) as \"2 Days Before\" from usersession  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"2d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 456,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk4",
+      "query": "select count(*) as \"3 Days Before\" from usersession  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"3d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 608,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk5",
+      "query": "select count(*) as \"4 Days Before\" from usersession  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"4d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 760,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk6",
+      "query": "select count(*) as \"5 Days Before\" from usersession  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"5d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 912,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk7",
+      "query": "select count(*) as \"6 Days Before\" from usersession  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"6d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 2546,
+        "left": 1064,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "!PU(link):plnk8",
+      "query": "select count(*) as \"7 Days Before\" from usersession  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"7d\")-DURATION(\"12h\") and  stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "SINGLE_VALUE",
+      "limit": 1000
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk1;full=false;size=24px\n## Today"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk3;full=false;size=24px\n## 2 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 266,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk4;full=false;size=24px\n## 3 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk2;full=false;size=24px\n## 1 Day Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk5;full=false;size=24px\n## 4 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk7;full=false;size=24px\n## 6 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {
+        "timeframe": "Last 2 hours"
+      },
+      "markdown": "!PU(math):exp=(a);scope=a:plnk8;full=false;size=24px\n## 7 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:plnk6;full=false;size=24px\n## 5 Days Before"
+    },
+    {
+      "name": "Avg Duration",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1292,
+        "left": 1710,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1710,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk6;full=false;size=24px\n## 5 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1330,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk1;full=false;size=24px\n## Today"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1406,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk2;full=false;size=24px\n## 1 Day Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1482,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk3;full=false;size=24px\n## 2 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1558,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk4;full=false;size=24px\n## 3 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1634,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk5;full=false;size=24px\n## 4 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1862,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {
+        "timeframe": "Last 2 hours"
+      },
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk8;full=false;size=24px\n## 7 Days Before"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1786,
+        "left": 1710,
+        "width": 304,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:dlnk7;full=false;size=24px\n## 6 Days Before"
+    },
+    {
+      "name": "Purchase Counts",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1710,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 1710,
+        "height": 646
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "${uspClause.value} Purchase Trends",
+      "query": "select distinct DATETIME(starttime,\"mm\",\"1h\") as \"Start Time\",\nCONDITION(count(*),  where starttime < $NOW and starttime > $NOW-DURATION(\"12h\") and useraction.name=\"activate\") as \"Today\",\nCONDITION(count(*),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"1d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"1 Day Before\",\nCONDITION(count(*),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"2d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"2 Days Before\",\nCONDITION(count(*),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"3d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"3 Days Before\",\nCONDITION(count(*),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"4d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"4 Days Before\",\nCONDITION(count(*),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"5d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"5 Days Before\",\nCONDITION(count(*),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"6d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"6 Days Before\",\nCONDITION(count(*),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"7d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"7 Days Before\" \nFROM usersession where stringProperties.airline=\"${uspClause.value}\" and useraction.name=\"activate\"",
+      "type": "LINE_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      },
+      "limit": 50
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 0,
+        "width": 1710,
+        "height": 646
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "${uspClause.value} Error Count",
+      "query": "select distinct DATETIME(starttime,\"mm\",\"1h\") as \"Start Time\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW and starttime > $NOW-DURATION(\"12h\") and useraction.name=\"activate\") as \"Today\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"1d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"1 Day Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"2d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"2 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"3d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"3 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"4d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"4 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"5d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"5 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"6d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"6 Days Before\",\nCONDITION(count(useraction.requesterrorCount),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"7d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"7 Days Before\" \nFROM usersession where stringProperties.airline=\"${uspClause.value}\"",
+      "type": "LINE_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      },
+      "limit": 50
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1292,
+        "left": 0,
+        "width": 1710,
+        "height": 646
+      },
+      "tileFilter": {
+        "timeframe": "-8d"
+      },
+      "customName": "${uspClause.value} Avg Duration",
+      "query": "select distinct DATETIME(starttime,\"mm\",\"1h\") as \"Start Time\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW and starttime > $NOW-DURATION(\"12h\") and useraction.name=\"activate\") as \"Today\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"1d\") and starttime > $NOW-DURATION(\"1d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"1 Day Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"2d\") and starttime > $NOW-DURATION(\"2d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"2 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"3d\") and starttime > $NOW-DURATION(\"3d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"3 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"4d\") and starttime > $NOW-DURATION(\"4d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"4 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"5d\") and starttime > $NOW-DURATION(\"5d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"5 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"6d\") and starttime > $NOW-DURATION(\"6d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"6 Days Before\",\nCONDITION(avg(useraction.duration),  where starttime < $NOW-DURATION(\"7d\") and starttime > $NOW-DURATION(\"7d\")-DURATION(\"12h\") and useraction.name=\"activate\") as \"7 Days Before\" \nFROM usersession where stringProperties.airline=\"${uspClause.value}\"",
+      "type": "LINE_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      },
+      "limit": 50
+    }
+  ]
+}
