@@ -777,6 +777,285 @@
           }
         ]
       }
+    },
+    {
+      "name": "Browser",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 0,
+        "width": 1824,
+        "height": 418
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "calc:apps.web.gogoinflightproduction.mobilebrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.browser"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "calc:apps.web.gogoinflightproduction.desktopbrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.browser"
+          ],
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "calc:apps.web.gogoinflightproduction.tabletbrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.browser"
+          ],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "MobileBrowser",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#7dc540"
+              },
+              {
+                "value": 4000,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 8000,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Browser Type",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1026,
+        "left": 0,
+        "width": 1824,
+        "height": 418
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "calc:apps.web.gogoinflightproduction.mobilebrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "calc:apps.web.gogoinflightproduction.desktopbrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "calc:apps.web.gogoinflightproduction.tabletbrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "MobileBrowser",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#7dc540"
+              },
+              {
+                "value": 4000,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 8000,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Browser Type by Airline",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1444,
+        "left": 0,
+        "width": 1824,
+        "height": 418
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "calc:apps.web.gogoinflightproduction.mobilebrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "airline"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          },
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "calc:apps.web.gogoinflightproduction.desktopbrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "airline"
+          ],
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "calc:apps.web.gogoinflightproduction.tabletbrowser",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "airline"
+          ],
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "threshold": {
+            "axisTarget": "LEFT",
+            "columnId": "MobileBrowser",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#7dc540"
+              },
+              {
+                "value": 4000,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 8000,
+                "color": "#dc172a"
+              }
+            ]
+          },
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          },
+          {
+            "matcher": "B:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          },
+          {
+            "matcher": "C:",
+            "properties": {
+              "seriesType": "AREA"
+            }
+          }
+        ]
+      }
     }
   ]
 }
