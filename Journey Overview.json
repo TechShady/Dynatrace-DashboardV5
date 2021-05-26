@@ -35,7 +35,7 @@
       },
       "tileFilter": {},
       "customName": "$0 Product !PU(funnel):mode=height;small=5;big=10;links=lnk1",
-      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
       "limit": 1000
@@ -138,7 +138,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(link):lnk1\n1=#dashboard;id=1f993e62-c4b7-4ba3-9b05-7f426362ed22\n2=#dashboard;id=1f993e62-c4b7-4ba3-9b05-7f426362ed22\n3=#dashboard;id=1f993e62-c4b7-4ba3-9b05-7f426362ed22\n"
+      "markdown": "!PU(link):lnk1\n1=#dashboard;id=2f993e62-c4b7-4ba3-9b05-7f426362ed22\n2=#dashboard;id=2f993e62-c4b7-4ba3-9b05-7f426362ed22\n"
     },
     {
       "name": "Markdown",
