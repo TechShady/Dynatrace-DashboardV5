@@ -231,52 +231,6 @@
       "timeFrameShift": "dynamic"
     },
     {
-      "name": "Step2 Count Worker Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 1482,
-        "left": 76,
-        "width": 38,
-        "height": 38
-      },
-      "tileFilter": {},
-      "customName": "!PU(link):lnkstep2",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"process order\" AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
-      "type": "SINGLE_VALUE"
-    },
-    {
-      "name": "Step2 Abandons Count Worker Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 1482,
-        "left": 114,
-        "width": 38,
-        "height": 38
-      },
-      "tileFilter": {},
-      "customName": "!PU(link):lnkstep2abandons",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"process order\" and not (useraction.matchingConversionGoals=\"Activate\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
-      "type": "SINGLE_VALUE",
-      "timeFrameShift": "dynamic"
-    },
-    {
-      "name": "StepLast Count Worker Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 1482,
-        "left": 152,
-        "width": 38,
-        "height": 38
-      },
-      "tileFilter": {},
-      "customName": "!PU(link):lnkstep3",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"process order\" and useraction.name=\"activate\" AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
-      "type": "SINGLE_VALUE"
-    },
-    {
       "name": "StepLast Abandons Count Worker Query",
       "tileType": "DTAQL",
       "configured": true,
@@ -338,22 +292,6 @@
       "timeFrameShift": "dynamic"
     },
     {
-      "name": "Step2 Exit Count Worker Query",
-      "tileType": "DTAQL",
-      "configured": true,
-      "bounds": {
-        "top": 1520,
-        "left": 114,
-        "width": 38,
-        "height": 38
-      },
-      "tileFilter": {},
-      "customName": "!PU(link):lnkstep2exits",
-      "query": "select count(*) from useraction where ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\")) and isExitAction=true  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
-      "type": "SINGLE_VALUE",
-      "timeFrameShift": "dynamic"
-    },
-    {
       "name": "StepLast Exit Count Worker Query",
       "tileType": "DTAQL",
       "configured": true,
@@ -396,19 +334,6 @@
       },
       "tileFilter": {},
       "markdown": "!PU(link):lnkstep1abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep1abandons,b:lnkstep1;base=low;warn=90;crit=95;full=false "
-    },
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-        "top": 1596,
-        "left": 228,
-        "width": 38,
-        "height": 38
-      },
-      "tileFilter": {},
-      "markdown": "!PU(link):lnkstep2abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false \n"
     },
     {
       "name": "Markdown",
