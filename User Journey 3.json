@@ -1,0 +1,685 @@
+ {
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.217.139.20210521-170114"
+  },
+  "id": "3f993e62-c4b7-4ba3-9b05-7f426362ed22",
+  "dashboardMetadata": {
+    "name": "💎 ${uspClause.value} Active Subscription User Journey",
+    "shared": true,
+    "owner": "john.kelly@dynatrace.com",
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS"
+    },
+    "tags": [
+      "${uspClause.value}",
+      "User Journey"
+    ]
+  },
+  "tiles": [
+    {
+      "name": "HelpIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=help-bubble;link=lnkstep1;color=lightblue;url=#dashboard;id=f920d184-d996-4249-b484-215222370b91;tooltip=Help"
+    },
+    {
+      "name": "SessionsHeader",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 0,
+        "width": 114,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Sessions"
+    },
+    {
+      "name": "SessionsIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 114,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=actionspersession;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80;tooltip=Sankey_Dashboard"
+    },
+    {
+      "name": "AbandonsHeader",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 114,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Abandons"
+    },
+    {
+      "name": "AbandonsIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 114,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=exit;link=funnelabandons;base=low;warn=200;crit=300;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e111505;tooltip=Abandons_Dashboard"
+    },
+    {
+      "name": "StepsHeader",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 0,
+        "width": 114,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Steps"
+    },
+    {
+      "name": "StepsIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 114,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnksessionrate;base=high;warn=5;crit=3;full=false;url=https://zev64990.live.dynatrace.com/#uemapplications/performanceanalysis;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;visiblepart=action;gtf=l_2_HOURS;gf=all;filtr3ftf=custom1620935759542to1620937559542select1620936659542;filtr3sProp0-=airline%20s${uspClause.value};tooltip=Steps_Analysis"
+    },
+    {
+      "name": "Step1Header",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 152,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Splash !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+    },
+    {
+      "name": "Step1ForensicsIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 380,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep1abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111;tooltip=Splash_Forensics_Dashboard"
+    },
+    {
+      "name": "Step1WebPageIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 418,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash;tooltip=Splash_Page_Analysis"
+    },
+    {
+      "name": "Step1SankeyIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 456,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81;tooltip=Splash_Sankey_Dashboard"
+    },
+    {
+      "name": "Step1OverviewIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 494,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91;tooltip=Splash_Overview_Dashboard"
+    },
+    {
+      "name": "Step2Header",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 532,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Payment Signin !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+    },
+    {
+      "name": "Step2ForensicsIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 760,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep1abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114;tooltip=Payment_Signin_Forensics_Dashboard"
+    },
+    {
+      "name": "Step2WebPageIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 798,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in;tooltip=Payment_Signin_Page_Analysis"
+    },
+    {
+      "name": "Step2SankeyIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 836,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84;tooltip=Payment_Signin_Sankey_Dashboard"
+    },
+    {
+      "name": "Step2OverviewIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 874,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94;tooltip=Payment_Signin_Overview_Dashboard"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 152,
+        "width": 1140,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "!PU(menu):name=ApplicationInsights;url=#dashboard;id=7e2ffa59-d228-4074-8fa7-88dcbb678a3b !PU(menu):name=PaymentOverview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2667 !PU(menu):name=ApplicationOverview;url=#dashboard;id=1813b247-161e-4909-aeac-d1ce40f60eb3 !PU(menu):name=BrowserAnalysis;url=#dashboard;id=561de3a1-8a1b-4965-8227-6e8a75cd5ab1 !PU(menu):name=Sankey;url=#dashboard;id=561de3a1-8a1b-4965-8227-6e8a75cd5ab1 !PU(menu):name=${uspClause.value}PaymentOverview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2666 !PU(menu):name=${uspClause.value}ApplicationOverview;url=#dashboard;id=1813b247-161e-4909-aeac-d1ce40f60eb2 !PU(menu):name=${uspClause.value}BrowserAnalysis;url=#dashboard;id=561de3a1-8a1b-4965-8227-6e8a75cd5ab2 !PU(menu):name=${uspClause.value}Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "type": "FUNNEL",
+      "timeFrameShift": "dynamic",
+      "limit": 50
+    },
+    {
+      "name": "Step1 Abandons Count",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 152,
+        "width": 114,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1abandons;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+    },
+    {
+      "name": "Step1 Abandon Rate",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 266,
+        "width": 152,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a/b)*100;scope=a:lnkstep1abandons,b:lnkstep1;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+    },
+    {
+      "name": "Step1 Exit Count",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 418,
+        "width": 114,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+    },
+    {
+      "name": "Step2 Abandons Count",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 532,
+        "width": 114,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2abandons;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+    },
+    {
+      "name": "Step2 Abandon Rate",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 646,
+        "width": 152,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+    },
+    {
+      "name": "Step2 Exit Count",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 798,
+        "width": 114,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+    },
+    {
+      "name": "Steps Timeseries Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 152,
+        "width": 1140,
+        "height": 418
+      },
+      "tileFilter": {},
+      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c3a52da8-46a1-4b11-bc15-a3da2cd15319 !PU(menu):name=AirlineTrends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b06 !PU(menu):name=${uspClause.value}Trends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b05 !PU(menu):name=AirlineTrends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b06 !PU(menu):name=${uspClause.value}Trends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b05 !PU(menu):name=AirlineTrends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b06 !PU(menu):name=${uspClause.value}Trends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b05 !PU(menu):name=AirlineTrends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b06 !PU(menu):name=${uspClause.value}Trends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b05",
+      "query": "SELECT distinct datetime(endtime,\"HH:mm\",\"5m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\"))) AS \"Payment Signin\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\"))) AS \"Payment Signin\" and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "LINE_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      }
+    },
+    {
+      "name": "Step1 Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1482,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnkstep1",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" AND usersession.stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "Step1 Abandon Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1482,
+        "left": 38,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnkstep1abandons",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and not (useraction.matchingConversionGoals=\"Activate\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Step1 Abandon Rate Worker Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1558,
+        "left": 228,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnkstep1abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep1abandons,b:lnkstep1;base=low;warn=90;crit=95;full=false "
+    },
+    {
+      "name": "Step1 Exit Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1520,
+        "left": 76,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnkstep1exits",
+      "query": "select count(*) from useraction where ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and isExitAction=true  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Step2 Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1672,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnkstep2",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"payment/sign_in\" AND usersession.stringProperties.airline=\"${uspClause.value}\"",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "Step2 Abandon Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1672,
+        "left": 38,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnkstep2abandons",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"payment/sign_in\" and not (useraction.matchingConversionGoals=\"Activate\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Step2 Abandon Rate Worker Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1672,
+        "left": 228,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnkstep2abandonrate !PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false "
+    },
+    {
+      "name": "Step2 Exit Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1672,
+        "left": 76,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnkstep2exits",
+      "query": "select count(*) from useraction where ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and isExitAction=true  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "StepLast Abandons Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1482,
+        "left": 190,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnksteplastabandons",
+      "query": "select 0 from usersession limit 1",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "StepLast Exit Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1558,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnksteplastexits",
+      "query": "select count(*) from useraction where ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\")) and isExitAction=true  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Funnel Sessions Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1558,
+        "left": 76,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnkfunnelsessions",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.matchingConversionGoals=\"Splash\"  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "Conversions Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1520,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):funnelconversions",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\") and  (useraction.matchingConversionGoals=\"Splash\") and   (useraction.matchingConversionGoals=\"Activate\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "Abandons Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1520,
+        "left": 38,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):funnelabandons",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\") and  (useraction.matchingConversionGoals=\"Splash\") and not  (useraction.matchingConversionGoals=\"Activate\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "Sessions Count Worker Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1558,
+        "left": 38,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "customName": "!PU(link):lnksessions",
+      "query": "select count(distinct userSessionId) FROM usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "Session Rate Worker Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1558,
+        "left": 114,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):lnksessionrate !PU(math):exp=(a/b)*100;scope=a:lnkfunnelsessions,b:lnksessions;base=high;warn=5;crit=3;full=false"
+    },
+    {
+      "name": "StepLastHeader",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 912,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Activate !PU(menu):name=Conversions;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e222505 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+    },
+    {
+      "name": "StepLastWebPageIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1178,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all;tooltip=Activate_Page_Analysis"
+    },
+    {
+      "name": "StepLastConversionIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1140,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=conversions;link=funnelconversions;base=high;warn=20;crit=10;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e222505;tooltip=Conversion_Dashboard"
+    },
+    {
+      "name": "StepLastSankeyIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1216,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83;tooltip=Activate_Sankey_Dashboard"
+    },
+    {
+      "name": "StepLastOverviewIcon",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1254,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93;tooltip=Activate_Overview_Dashboard"
+    },
+    {
+      "name": "StepLast Exit Count",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 1178,
+        "width": 114,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastexits;full=false \n# Site Exits !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+    },
+    {
+      "name": "StepLast Abandons Count",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 912,
+        "width": 114,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastabandons;full=false \n# Abandons !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+    },
+    {
+      "name": "StepLast Abandon Rate",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 1026,
+        "width": 152,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep1;full=false \n# Abandon Rate !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+    }
+  ]
+}
