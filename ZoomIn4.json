@@ -1,0 +1,42 @@
+ {
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.215.107.20210414-181420"
+  },
+  "id": "c3a52da8-46a1-4b11-bc15-a3da2cd15314",
+  "dashboardMetadata": {
+    "name": "User Journey Steps",
+    "shared": false,
+    "owner": "john.kelly@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS"
+    }
+  },
+  "tiles": [
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 1672,
+        "height": 798
+      },
+      "tileFilter": {},
+      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomOut;url=#dashboard;id=4f993e62-c4b7-4ba3-9b05-7f426362ed22",
+      "query": "SELECT distinct datetime(endtime,\"HH:mm\",\"5m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\"))) AS \"Payment Signin\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/create_account\"))) AS \"Create Account\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/create_account\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "type": "LINE_CHART",
+      "visualizationConfig": {
+        "hasAxisBucketing": false
+      },
+      "limit": 50
+    }
+  ]
+}

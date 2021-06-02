@@ -10,12 +10,16 @@
     "name": "💎 ${uspClause.value} $0 Product User Journey",
     "shared": true,
     "owner": "john.kelly@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
     "dashboardFilter": {
       "timeframe": "l_2_HOURS"
     },
     "tags": [
-      "${uspClause.value}",
-      "User Journey"
+      "User Journey",
+      "${uspClause.value}"
     ]
   },
   "tiles": [
@@ -121,7 +125,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "## Splash !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+      "markdown": "## Splash !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "Step1ForensicsIcon",
@@ -147,7 +151,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash;tooltip=Splash_Page_Analysis"
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;tooltip=Splash_Page_Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash&filtr3sProp=airline%20s${uspClause.value}"
     },
     {
       "name": "Step1SankeyIcon",
@@ -186,7 +190,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "## Activate !PU(menu):name=Conversions;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e222505 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+      "markdown": "## Activate !PU(menu):name=Conversions;url=#dashboard;id=0d81ee7c-f7ba-4626-a086-60b76e222505 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all;filtr3sProp0-=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "StepLastConversionIcon",
@@ -212,7 +216,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all;tooltip=Activate_Page_Analysis"
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;tooltip=Activate_Page_Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all;filtr3sProp0-=airline%20s${uspClause.value}"
     },
     {
       "name": "StepLastSankeyIcon",
@@ -268,7 +272,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1abandons;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1abandons;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "Step1 Abandon Rate",
@@ -281,7 +285,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a/b)*100;scope=a:lnkstep1abandons,b:lnkstep1;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+      "markdown": "!PU(math):exp=(a/b)*100;scope=a:lnkstep1abandons,b:lnkstep1;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "Step1 Exit Count",
@@ -294,7 +298,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep1exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711111 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fifc%2Fsplash&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b81 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc91"
     },
     {
       "name": "StepLast Abandons Count",
@@ -307,7 +311,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastabandons;full=false \n# Abandons !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastabandons;full=false \n# Abandons !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all;filtr3sProp0-=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "StepLast Abandon Rate",
@@ -320,7 +324,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep1;full=false \n# Abandon Rate !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+      "markdown": "!PU(math):exp=(a-b);scope=a:lnkstep1,b:lnkstep1;full=false \n# Abandon Rate !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all;filtr3sProp0-=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "StepLast Exit Count",
@@ -333,7 +337,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastexits;full=false \n# Site Exits !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
+      "markdown": "!PU(math):exp=(a);scope=a:lnksteplastexits;full=false \n# Site Exits !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6279FE75FF75187C;uemapplicationId=APPLICATION-4ECA8C42196BA4A2;uatype=Xhr;meid=APPLICATION_METHOD-6279FE75FF75187C;filtr3ftf=custom1620763490430to1620765290430select1620764390430;gtf=-2h%20to%20now;gf=all;filtr3sProp0-=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b83 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc93"
     },
     {
       "name": "Steps Timeseries Query",
@@ -346,7 +350,7 @@
         "height": 418
       },
       "tileFilter": {},
-      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c3a52da8-46a1-4b11-bc15-a3da2cd15319 !PU(menu):name=AirlineTrends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b06 !PU(menu):name=${uspClause.value}Trends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b05 !PU(menu):name=AirlineTrends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b06 !PU(menu):name=${uspClause.value}Trends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b05 !PU(menu):name=AirlineTrends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b06 !PU(menu):name=${uspClause.value}Trends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b05 !PU(menu):name=AirlineTrends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b06 !PU(menu):name=${uspClause.value}Trends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b05",
+      "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c3a52da8-46a1-4b11-bc15-a3da2cd15312 !PU(menu):name=AirlineTrends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b06 !PU(menu):name=${uspClause.value}Trends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b05 !PU(menu):name=AirlineTrends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b06 !PU(menu):name=${uspClause.value}Trends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b05 !PU(menu):name=AirlineTrends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b06 !PU(menu):name=${uspClause.value}Trends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b05 !PU(menu):name=AirlineTrends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b06 !PU(menu):name=${uspClause.value}Trends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b05",
       "query": "SELECT distinct datetime(endtime,\"HH:mm\",\"5m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
       "type": "LINE_CHART",
       "visualizationConfig": {
