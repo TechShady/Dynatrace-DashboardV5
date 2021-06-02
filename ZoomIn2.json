@@ -31,7 +31,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomOut;url=#dashboard;id=2f993e62-c4b7-4ba3-9b05-7f426362ed22",
-      "query": "SELECT distinct datetime(endtime,\"M-d HH:mm\",\"2m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  ${uspClause}",
+      "query": "SELECT distinct datetime(endtime,\"HH:mm\",\"2m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  ${uspClause}",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": false
