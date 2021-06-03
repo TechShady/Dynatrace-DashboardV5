@@ -1,0 +1,66 @@
+ {
+  "metadata": {
+    "configurationVersions": [
+      3
+    ],
+    "clusterVersion": "1.218.86.20210531-110337"
+  },
+  "id": "12345678-3cc8-4a15-b9ce-c57ebb331d85",
+  "dashboardMetadata": {
+    "name": "💎 ${uspClause.value} Sankey Dashboard - Payment Checkout Abandons",
+    "shared": false,
+    "owner": "john.kelly@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS"
+    },
+    "tags": ["Sankey","${uspClause.value}"]
+  },
+  "tiles": [
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 1672,
+        "height": 798
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):sankey1"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1368,
+        "left": 304,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "markdown": "!PU(link):flink1\n"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1368,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {},
+      "customName": "UserJourneys !PU(sankey):link=sankey1;convHack=2;colors=apdex;flink=flink1",
+      "query": "select useraction.*,usersession.* FROM usersession WHERE useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"payment/checkout\" and userType=\"REAL_USER\"  AND (usersession.stringProperties.airline=\"${uspClause.value}\") and not (useraction.matchingConversionGoals=\"Activate\")",
+      "type": "TABLE",
+      "limit": 1000
+    }
+  ]
+}
