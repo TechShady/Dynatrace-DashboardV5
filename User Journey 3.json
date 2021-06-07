@@ -203,7 +203,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep1abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114;tooltip=Payment_Signin_Forensics_Dashboard"
+      "markdown": "!PU(svg):icon=faultdomainanalysis;link=lnkstep2abandonrate;base=low;warn=90;crit=95;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114;tooltip=Payment_Signin_Forensics_Dashboard"
     },
     {
       "name": "Step2WebPageIcon",
@@ -216,7 +216,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=webpages;link=lnkstep1abandonrate;color=white;tooltip=Payment_Signin_Page_Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in&filtr3sProp=airline%20s${uspClause.value}"
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep2abandonrate;color=white;tooltip=Payment_Signin_Page_Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in&filtr3sProp=airline%20s${uspClause.value}"
     },
     {
       "name": "Step2SankeyIcon",
@@ -229,7 +229,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep1abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84;tooltip=Payment_Signin_Sankey_Dashboard"
+      "markdown": "!PU(svg):icon=actionspersession;link=lnkstep2abandonrate;color=white;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84;tooltip=Payment_Signin_Sankey_Dashboard"
     },
     {
       "name": "Step2OverviewIcon",
@@ -242,7 +242,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=overview;link=lnkstep1abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94;tooltip=Payment_Signin_Overview_Dashboard"
+      "markdown": "!PU(svg):icon=overview;link=lnkstep2abandonrate;color=white;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94;tooltip=Payment_Signin_Overview_Dashboard"
     },
     {
       "name": "User Sessions Query",
