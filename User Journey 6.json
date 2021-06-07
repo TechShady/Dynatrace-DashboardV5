@@ -190,7 +190,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "## Payment Signin !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsignin&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+      "markdown": "## Payment Signin !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "Step2ForensicsIcon",
@@ -229,7 +229,7 @@
         "height": 38
       },
       "tileFilter": {},
-      "markdown": "!PU(svg):icon=webpages;link=lnkstep2abandonrate;color=white;tooltip=Payment_Signin_Page_Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsignin&filtr3sProp=airline%20s${uspClause.value}"
+      "markdown": "!PU(svg):icon=webpages;link=lnkstep2abandonrate;color=white;tooltip=Payment_Signin_Page_Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in&filtr3sProp=airline%20s${uspClause.value}"
     },
     {
       "name": "Step2OverviewIcon",
@@ -451,7 +451,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(menu):name=ApplicationInsights;url=#dashboard;id=7e2ffa59-d228-4074-8fa7-88dcbb678a3b !PU(menu):name=PaymentOverview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2667 !PU(menu):name=ApplicationOverview;url=#dashboard;id=1813b247-161e-4909-aeac-d1ce40f60eb3 !PU(menu):name=BrowserAnalysis;url=#dashboard;id=561de3a1-8a1b-4965-8227-6e8a75cd5ab1 !PU(menu):name=Sankey;url=#dashboard;id=561de3a1-8a1b-4965-8227-6e8a75cd5ab1 !PU(menu):name=${uspClause.value}PaymentOverview;url=#dashboard;id=6f9b869c-3715-4c42-b2d3-3950e38f2666 !PU(menu):name=${uspClause.value}ApplicationOverview;url=#dashboard;id=1813b247-161e-4909-aeac-d1ce40f60eb2 !PU(menu):name=${uspClause.value}BrowserAnalysis;url=#dashboard;id=561de3a1-8a1b-4965-8227-6e8a75cd5ab2 !PU(menu):name=${uspClause.value}Sankey;url=#dashboard;id=98ce6811-3cc8-4a15-b9ce-c57ebb331b80 !PU(funnelcolors):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231",
-      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/signin\") AS \"Payment Signin\", (useraction.name=\"payment/checkout\") AS \"Payment Checkout\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
+      "query": "SELECT FUNNEL((useraction.name=\"ifc/splash\") AS \"Splash\", (useraction.name=\"payment/sign_in\") AS \"Payment Signin\", (useraction.name=\"payment/checkout\") AS \"Payment Checkout\", (useraction.name=\"process order\") AS \"Process Order\", (useraction.name=\"activate\") AS \"Activate\") FROM usersession where useraction.application in (\"Gogo Inflight Production\") and stringProperties.airline=\"${uspClause.value}\"",
       "type": "FUNNEL",
       "timeFrameShift": "dynamic",
       "limit": 50
@@ -506,7 +506,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2abandons;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsignin&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331d84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2abandons;full=false \n# Abandons !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331d84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "Step2 Abandon Rate",
@@ -519,7 +519,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsignint&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+      "markdown": "!PU(math):exp=(a/b)*100;scope=a:lnkstep2abandons,b:lnkstep2;base=low;warn=90;crit=95;full=false \n# Abandon Rate !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_int&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331b84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "Step2 Exit Count",
@@ -532,7 +532,7 @@
         "height": 76
       },
       "tileFilter": {},
-      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsignin&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331a84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
+      "markdown": "!PU(math):exp=(a);scope=a:lnkstep2exits;full=false \n# Site Exits !PU(menu):name=Forensics;url=#dashboard;id=a7340848-3f03-4155-ac08-d8ea4a711114 !PU(menu):name=Analysis;url=https://zev64990.live.dynatrace.com/ui/applications/APPLICATION-4ECA8C42196BA4A2/pages/details?gtf=-2h%20to%20now&gf=all&filtr3filterTargetViewName=%2Fapp%2Fpayment%2Fsign_in&filtr3sProp=airline%20s${uspClause.value} !PU(menu):name=Sankey;url=#dashboard;id=12345678-3cc8-4a15-b9ce-c57ebb331a84 !PU(menu):name=Overview;url=#dashboard;id=a98b146b-5647-494f-9be1-bf455404bc94"
     },
     {
       "name": "Step3 Abandons Count",
@@ -663,7 +663,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(usqlcolor):colors=#4363d8,#42d4f4,#f032e6,#469990,#e6beff,#9a6324,#aaffc3,#808000,#ffd8b1,#f58231 !PU(menu):name=ZoomIn;url=#dashboard;id=c3a52da8-46a1-4b11-bc15-a3da2cd15314 !PU(menu):name=AirlineTrends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b06 !PU(menu):name=${uspClause.value}Trends-24hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a8b05 !PU(menu):name=AirlineTrends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b06 !PU(menu):name=${uspClause.value}Trends-12hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a5b05 !PU(menu):name=AirlineTrends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b06 !PU(menu):name=${uspClause.value}Trends-6hrs;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a6b05 !PU(menu):name=AirlineTrends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b06 !PU(menu):name=${uspClause.value}Trends-1hr;url=#dashboard;id=f577935b-421b-4370-a8a8-f376f88a7b05",
-      "query": "SELECT distinct datetime(endtime,\"HH:mm\",\"5m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/signin\"))) AS \"Payment Signin\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/signin\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/checkout\"))) AS \"Payment Checkout\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/signin\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/checkout\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\"))) AS \"Process Order\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/signin\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/checkout\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "query": "SELECT distinct datetime(endtime,\"HH:mm\",\"5m\"), CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\"))) AS \"Splash\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\"))) AS \"Payment Signin\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/checkout\"))) AS \"Payment Checkout\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/checkout\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\"))) AS \"Process Order\", CONDITION(count(*), WHERE ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"ifc/splash\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/checkout\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"process order\")) and ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"activate\"))) AS \"Activate\" from usersession where useraction.application in (\"Gogo Inflight Production\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
       "type": "LINE_CHART",
       "visualizationConfig": {
         "hasAxisBucketing": false
@@ -741,7 +741,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep2",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"payment/signin\" AND usersession.stringProperties.airline=\"${uspClause.value}\"",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"payment/sign_in\" AND usersession.stringProperties.airline=\"${uspClause.value}\"",
       "type": "SINGLE_VALUE"
     },
     {
@@ -756,7 +756,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep2abandons",
-      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"payment/signin\" and not (useraction.matchingConversionGoals=\"Activate\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "query": "select count(usersessionid) from usersession where useraction.application in (\"Gogo Inflight Production\") and useraction.name=\"ifc/splash\" and useraction.name=\"payment/sign_in\" and not (useraction.matchingConversionGoals=\"Activate\")  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -785,7 +785,7 @@
       },
       "tileFilter": {},
       "customName": "!PU(link):lnkstep2exits",
-      "query": "select count(*) from useraction where ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/signin\")) and isExitAction=true  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
+      "query": "select count(*) from useraction where ((useraction.application=\"Gogo Inflight Production\" and useraction.name=\"payment/sign_in\")) and isExitAction=true  AND (usersession.stringProperties.airline=\"${uspClause.value}\")",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
